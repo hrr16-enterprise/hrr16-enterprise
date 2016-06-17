@@ -5,7 +5,11 @@ export defaults (state = {
     content: '',
     open: false,
     type: ''
+  }, 
+  button:{
+    active: false
   }
+  
 }, action) => {
   switch (action.type) {
     case types.POPUP_CLOSE:
@@ -30,3 +34,6 @@ export defaults (state = {
     return state;
   };
 };
+
+
+

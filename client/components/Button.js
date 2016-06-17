@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import * as actions from '../actions/index.js';
 
 export default class Button extends Component {
   
