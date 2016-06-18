@@ -6,3 +6,4 @@ export const POPUP_OPEN = 'POPUP_OPEN';
 export const REQUEST_DATA = 'REQUEST_DATA';
 export const RECEIVE_DATA = 'RECEIVE_DATA';
 
+export const UPDATE_DATA_STATE = 'UPDATE_DATA_STATE';
