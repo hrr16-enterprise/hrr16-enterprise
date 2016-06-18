@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, IndexRedirect } from 'react-router';
-import NavBar from './components/NavBar';
+import CoreLayout from './components/CoreLayout';
 
 export default (
-  <Route path="/" component={NavBar}>
+  <Route path="/" component={CoreLayout}>
   </Route>
 );
