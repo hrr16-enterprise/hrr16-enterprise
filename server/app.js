@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const app = express();
 
 //Static Files - possible need to serve the 'build' folder
-app.use('/', express.static(path.resolve(__dirname, '../client/')));
+app.use('/', express.static(path.resolve(__dirname, '../build/')));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

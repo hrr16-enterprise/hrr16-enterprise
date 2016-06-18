@@ -1,6 +1,6 @@
 import * as types from '../constants/ActionTypes';
 
-export defaults (state = {
+export default (state = {
   popup: {
     content: '',
     open: false,

@@ -11,6 +11,7 @@ client/lib/
 client/bower_components/
 
 ## Compiled files ##
+build/
 
 ## API keys ##
 
