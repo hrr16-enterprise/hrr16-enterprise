@@ -24,6 +24,13 @@ export const popupOpen = (content, keyword = 'general') => {
 
 //Button Actions
 
+const updateResultState = (updatedState) => {
+  return {
+    type: types.UPDATE_RESULT_STATE,
+    updatedResultState: updatedState
+  };
+};
+
 // export function fetchData(data) {
 //   return dispatch => {
 //     dispatch(requestData(data))
