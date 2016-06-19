@@ -4,8 +4,7 @@
   "description": "World in a moment, aggregates data based on a point of time, displaying the data for users.",
   "scripts": {
     "start": "node index.js",
-    "test": "./node_modules/.bin/mocha --reporter spec specs/server/ServerSpec.js;",
-    "clienttest": "./node_modules/.bin/mocha --compilers js:babel-register --recursive --reporter spec specs/client/ClientSpec.js",
+    "test": "./node_modules/.bin/mocha --reporter spec specs/server/ServerSpec.js && ./node_modules/.bin/mocha --compilers js:babel-register --recursive --reporter spec specs/client/ClientSpec.js",
     "go": "concurrently \"npm run build\" \"nodemon index.js\"",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached -w"
   },
