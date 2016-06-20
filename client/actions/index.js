@@ -2,6 +2,7 @@ import * as types from '../constants/ActionTypes';
 import helper from '../services/helper';
 import { push } from 'react-router-redux';
 import { reset } from 'redux-form';
+import axios from 'axios';
 
 // UI Actions
 export const popupClose = () => {
