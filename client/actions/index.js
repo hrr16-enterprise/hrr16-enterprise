@@ -33,7 +33,7 @@ const updateResultState = (updatedState) => {
 // flickr
 const FLICKR_KEY = 'c47ece224080058910137d84a24cfe94';
 // echo test url - switch out later for photo fetch
-const FLICKR_URL = 'https://api.flickr.com/services/rest/?method=flickr.test.echo&name=value';
+const FLICKR_URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c47ece224080058910137d84a24cfe94&has_geo=&format=json&nojsoncallback=1';
 
 export const FETCH_FLICKR = 'FETCH_FLICKR';
 
