@@ -1,21 +1,21 @@
 import React from 'react';
 
-// export default class Button extends Component {
+export default class Button extends Component {
 
-//   render() {
-//     return (
-//       <div className="button">
-//         <button>"The World in a minute"</button>
-//       </div>
-//     );
-//   }
-// }
+  render() {
+    return (
+      <div className="button">
+        <button>"The World in a minute"</button>
+      </div>
+    );
+  }
+}
 
 
-export const Button = ({ children }) => (
-  <div className="button">
-    <button>"The World in a minute"</button>
-  </div>
-);
+// export const Button = ({ children }) => (
+//   <div className="button">
+//     <button>"The World in a minute"</button>
+//   </div>
+// );
 
 export default Button;
