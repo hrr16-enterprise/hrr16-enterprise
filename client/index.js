@@ -9,8 +9,6 @@ import ReduxPromise from 'redux-promise';
 
 require('./styles/styles.css');
 
-// const creatStoreWithMiddleware = applyMiddleware(ReduxPromise){createStore};
-
 injectTapEventPlugin();
 
 const store = configureStore();
