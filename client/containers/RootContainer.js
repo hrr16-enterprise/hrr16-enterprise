@@ -5,10 +5,10 @@ import RootComponent from '../components/Root.js';
 const mapDispatchToProps = (dispatch) => {
   return {
     attemptVerify: () => {
-      let token = window.localStorage.getItem('jwtToken');
+      const token = window.localStorage.getItem('jwtToken');
 
       // If there is no token, do nothing
-      if(!token || token === '') {
+      if (!token || token === '') {
         return;
       }
       dispatch(actions.attemptVerify(token));

@@ -17,12 +17,19 @@ module.exports = {
   devtool: '#source-map',
 
   module: {
+    preloader:[
+      {
+        test: /\.js?$/, 
+        loader: 'eslint-loader',
+        include: __dirname + '/client'        
+      }
+    ],
     loaders: [
       {
-        // runs all jsx through babel
-        test: /\.jsx?$/,
+        // runs all js through babel
+        test: /\.js?$/,
         exclude: /(node_modules)/,
-        loaders: ['babel-loader']
+        loaders: ['babel-loader', 'eslint-loader']
       },
       { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
@@ -33,6 +40,10 @@ module.exports = {
       { test: /\.[ot]tf$/, loader: 'url?limit=65000&mimetype=application/octet-stream&name=public/fonts/[name].[ext]' },
       { test: /\.eot$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject&name=public/fonts/[name].[ext]' }
     ]
+  },
+  
+  eslint: {
+    configFile: './.eslintrc'
   },
 
   plugins: [
@@ -48,5 +59,4 @@ module.exports = {
     //  title: 'My App',
     //  filename: ''
     // })]
-
 };

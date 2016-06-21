@@ -11,4 +11,4 @@ export const CoreLayout = ({ children }) => (
   </div>
 );
 
-export default CoreLayout; 
+export default CoreLayout;
