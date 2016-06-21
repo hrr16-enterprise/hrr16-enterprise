@@ -14,14 +14,13 @@ export const popupOpen = (content, keyword = 'general') => {
   return {
     type: types.POPUP_OPEN,
     payload: {
-      content: content,
-      //content, (possible airbnb style)
+      content,
       type: keyword
     }
   };
 };
 
-//Button Actions
+// Button Actions
 
 const updateResultState = (updatedState) => {
   return {

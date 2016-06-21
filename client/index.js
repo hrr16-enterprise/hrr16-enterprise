@@ -6,14 +6,14 @@ import Root from './containers/RootContainer.js';
 import configureStore from './store/configureStore';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-require ("./styles/styles.css");
+require('./styles/styles.css');
 
 injectTapEventPlugin();
 
-const store = configureStore()
-const history = syncHistoryWithStore(browserHistory, store)
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
 render(
   <Root store={store} history={history} />,
   document.getElementById('root')
-)
+);

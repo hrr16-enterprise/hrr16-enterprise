@@ -5,16 +5,16 @@ export default (state = {
     content: '',
     open: false,
     type: ''
-  }, 
-  button:{
+  },
+  button: {
     active: false
   }
-  
+
 }, action) => {
   switch (action.type) {
     case types.POPUP_CLOSE:
     return {
-      ...state, 
+      ...state,
       popup: {
         content: '',
         open: false,
@@ -32,8 +32,5 @@ export default (state = {
     };
     default:
     return state;
-  };
+  }
 };
-
-
-
