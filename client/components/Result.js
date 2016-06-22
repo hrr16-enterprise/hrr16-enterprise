@@ -11,7 +11,7 @@ class Result extends Component {
   }
 
   render(){
-    const { result, ui } = this.props;
+    const { result, ui, flickr } = this.props;
     return(
       <div>
         <h1>{result.title}</h1>
