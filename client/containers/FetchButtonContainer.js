@@ -5,17 +5,15 @@ import * as actions from '../actions/index';
 import FetchButtonComponent from '../components/FetchButton';
 
 function mapDispatchToProps(dispatch) {
-  console.log("test");
   return {
     fetchFlickr: () => {
-      console.log('shotsfired');
+      console.log('fetchFlickr invoked');
       dispatch(actions.fetchFlickr());
     }
   };
 }
 
 function mapStateToProps(state, ownProps) {
-  console.log(state);
   return {
     
     ui: state.ui
