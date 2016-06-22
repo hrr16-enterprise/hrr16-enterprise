@@ -4,10 +4,8 @@ import FetchButton from '../containers/FetchButtonContainer';
 
 export const CoreLayout = ({ children }) => (
   <div>
-  <NavBar />
-  <FetchButton />
-
-
+    <NavBar />
+    <FetchButton />
   </div>
 );
 

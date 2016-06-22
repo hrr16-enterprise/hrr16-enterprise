@@ -1,8 +1,10 @@
 import React from 'react';
+import Login from '../containers/LoginContainer';
 
 export const NavBar = ({ children }) => (
   <div>
     <p>Hello world!</p>
+    <Login />
   </div>
 );
 

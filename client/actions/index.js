@@ -22,7 +22,7 @@ export const popupOpen = (content, keyword = 'general') => {
 };
 
 
-//Button Actions
+// Button Actions
 const updateResultState = (updatedState) => {
   return {
     type: types.UPDATE_RESULT_STATE,
@@ -39,14 +39,14 @@ export const flickrSuccess = (data) => {
   return {
     type: types.FLICKR_SUCCESS,
     payload: data
-  }
-}
+  };
+};
 
 export const flickrFailure = () => {
   return {
     type: types.FLICKR_FAILURE
-  }
-}
+  };
+};
 
 export const fetchFlickr = () => {
   // const url?
@@ -56,9 +56,45 @@ export const fetchFlickr = () => {
       dispatch(flickrSuccess(response.photos));
     })
     .catch((err) => {
-      console.error(err);
       dispatch(flickrFailure());
     });
-  }
-}
+  };
+};
+
+
+export const showLock = () => {
+  return {
+    type: types.SHOW_LOCK
+  };
+};
+
+export const lockSuccess = (profile, token) => {
+  return {
+    type: types.LOCK_SUCCESS,
+    profile,
+    token
+  };
+};
+
+export const lockError = (err) => {
+  return {
+    type: types.LOCK_ERROR,
+    err
+  };
+};
+
+export const login = () => {
+  const lock = new Auth0Lock('fSQYBLZ7j667JrQFzdb3IkAAdP4SO4yd', 'bdpellet.auth0.com');
+  return dispatch => {
+    lock.show((err, profile, token) => {
+      if (err) {
+        dispatch(lockError(err));
+        return;
+      }
+      localStorage.setItem('profile', JSON.stringify(profile));
+      localStorage.setItem('id_token', token);
+      dispatch(lockSuccess(profile, token));
+    });
+  };
+};
 
