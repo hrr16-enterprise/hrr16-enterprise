@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import * as actions from '../actions/index.js';
-import NavBarComponent from '../components/NavBar.js';
+import LoginComponent from '../components/Login';
 
 const mapDispatchToProps = (dispatch) => {
   return {
     // Add functions to dispatch login/logout actions
-    
+    onLoginClick: () => {
+      dispatch(actions.login());
+    }
   };
 };
 
@@ -16,4 +18,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBarComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent);

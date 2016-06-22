@@ -11,3 +11,7 @@ export const UPDATE_DATA_STATE = 'UPDATE_DATA_STATE';
 export const FETCH_FLICKR = 'FETCH_FLICKR';
 export const FLICKR_SUCCESS = 'FLICKR_SUCCESS';
 export const FLICKR_FAILURE = 'FLICKR_FAILURE';
+
+export const SHOW_LOCK = 'SHOW_LOCK';
+export const LOCK_SUCCESS = 'LOCK_SUCCESS';
+export const LOCK_ERROR = 'LOCK_ERROR';

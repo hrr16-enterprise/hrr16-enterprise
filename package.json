@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/hrr16-enterprise/hrr16-enterprise#readme",
   "dependencies": {
+    "auth0-lock": "^9.2.1",
     "axios": "^0.11.1",
     "bluebird": "^3.4.0",
     "body-parser": "^1.15.1",
