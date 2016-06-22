@@ -7,6 +7,8 @@ import configureStore from './store/configureStore';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import ReduxPromise from 'redux-promise';
 
+
+require('file?name=favicon.ico!./favicon.ico');
 require('./styles/styles.css');
 
 injectTapEventPlugin();
