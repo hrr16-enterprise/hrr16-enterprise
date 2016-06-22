@@ -6,8 +6,8 @@ export default class Logout extends Component {
     const { onLogoutClick } = this.props
 
     return (
-      <button onClick={() => onLogoutClick()} className="btn btn-primary">
-        Logout
+      <button onTouchTap={this.props.onLogoutClick} className="btn btn-primary">
+        Login
       </button>
     )
   }
