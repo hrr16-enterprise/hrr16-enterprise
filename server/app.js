@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const morgan = require('morgan');
+const results = require('./routes/results/results.js');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //Router
+app.use('/results', results);
 app.use('/*', (req, res) => {
   res.redirect('/');
 });
