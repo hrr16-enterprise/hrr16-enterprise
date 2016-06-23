@@ -3,8 +3,10 @@ export const POPUP_CLOSE = 'POPUP_CLOSE';
 export const POPUP_OPEN = 'POPUP_OPEN';
 
 // Button Actions
-export const REQUEST_DATA = 'REQUEST_DATA';
-export const RECEIVE_DATA = 'RECEIVE_DATA';
+export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const RECEIVE_POSTS = 'RECEIVE_POSTS'
+export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
+export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT'
 
 export const UPDATE_DATA_STATE = 'UPDATE_DATA_STATE';
 

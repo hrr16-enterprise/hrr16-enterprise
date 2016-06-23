@@ -99,3 +99,31 @@ export const login = () => {
   };
 };
 
+// Reddit 
+
+export const requestPosts = () => {
+  return {
+    type: types.REQUEST_POSTS
+  };
+};
+
+export const receivePosts = (data) => {
+  return {
+    type: types.RECEIVE_POSTS,
+    payload: data
+  };
+};
+
+export const fetchReddit = () => {
+  console.log('calling reddit');
+  return dispatch => {
+    return helper.getHelper('https://www.reddit.com/new.json?sort=new?')
+      .then((response) => {
+        console.log(response);
+        dispatch(receivePosts(response))})
+      .catch((err) => {
+        console.log(err);
+    });
+  };
+};
+

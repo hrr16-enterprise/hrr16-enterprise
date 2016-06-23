@@ -16,6 +16,7 @@ const mapStateToProps = (state) => {
     result: state.result,
     ui: state.ui,
     flickr: state.flickr,
+    reddit: state.reddit
   };
 };
 
