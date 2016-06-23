@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Promise = require('bluebird');
-const helper = require('../services/helper.js')
+const helper = require('../../services/helper.js')
 
 //flickr request handlers
 router.get('/flickr', (req, res) => {
