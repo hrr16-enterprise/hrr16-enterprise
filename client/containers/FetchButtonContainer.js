@@ -9,6 +9,9 @@ function mapDispatchToProps(dispatch) {
     fetchFlickr: () => {
       console.log('fetchFlickr invoked');
       dispatch(actions.fetchFlickr());
+    },
+    fetchReddit: () => {
+        dispatch(actions.fetchReddit());
     }
   };
 }
