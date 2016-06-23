@@ -6,12 +6,9 @@ import FetchButtonComponent from '../components/FetchButton';
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchFlickr: () => {
-      console.log('fetchFlickr invoked');
+    getData: () => {
+      dispatch(actions.fetchReddit());
       dispatch(actions.fetchFlickr());
-    },
-    fetchReddit: () => {
-        dispatch(actions.fetchReddit());
     }
   };
 }

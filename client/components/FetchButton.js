@@ -9,7 +9,7 @@ export default class FetchButton extends Component {
   render() {
     return (
       <div className="button">
-        <button onTouchTap={function(){this.props.fetchFlickr(); this.props.fetchReddit();}.bind(this) }>"The World in a minute"</button>
+        <button onTouchTap={this.props.getData.bind(this)}>"The World in a minute"</button>
       </div>
     );
   }

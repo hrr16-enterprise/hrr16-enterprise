@@ -9,10 +9,11 @@ export default class Reddit extends Component {
   render() {
     if (this.props.reddit.data.data){
       const posts = this.props.reddit.data.data.data.children;
+      console.log(posts);
       return (
         <ul>
           {posts.map((post, i) =>
-            {<li key={i}><a href={post.data.url}>{post.data.title}</a></li>}
+            <li key={i}><a href={post.data.url}>{post.data.title}</a></li>
           )}
         </ul>
       );

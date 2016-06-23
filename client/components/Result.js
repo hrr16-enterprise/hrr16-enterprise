@@ -18,11 +18,8 @@ class Result extends Component {
     const { result, ui, flickr, reddit } = this.props;
     return(
       <div>
-        <Flickr 
-        flickr={flickr}
-        />
-        
-      <Reddit reddit={reddit}/>
+        <Flickr flickr={flickr} />
+        <Reddit reddit={reddit} />
       </div>
     )
   }
