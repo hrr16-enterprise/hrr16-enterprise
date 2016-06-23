@@ -5,16 +5,17 @@ import { push } from 'react-router-redux';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchButtonClickData: () => {
-      dispatch(actions.fetchButtonClickData());
-    }
+    // fetchButtonClickData: () => {
+    //   dispatch(actions.fetchButtonClickData());
+    // }
   };
 };
 
 const mapStateToProps = (state) => {
   return {
     result: state.result,
-    ui: state.ui
+    ui: state.ui,
+    flickr: state.flickr,
   };
 };
 

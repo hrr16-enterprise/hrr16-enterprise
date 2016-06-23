@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import Flickr from './Flickr';
 
 class Result extends Component {
   constructor(props){
@@ -7,15 +8,16 @@ class Result extends Component {
   }
 
   componentWillMount(){
-    this.props.fetchButtonClickData();
+    // this.props.fetchButtonClickData();
   }
 
   render(){
-    const { result, ui } = this.props;
+    const { result, ui, flickr } = this.props;
     return(
       <div>
-        <h1>{result.title}</h1>
-        <img src={result.imgURL} />
+        <Flickr 
+        flickr={flickr}
+        />
       </div>
     )
   }
