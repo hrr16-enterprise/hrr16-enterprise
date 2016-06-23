@@ -118,7 +118,7 @@ export const fetchReddit = () => {
   console.log('calling reddit');
   return dispatch => {
     return helper.getHelper('https://www.reddit.com/new.json?sort=new?')
-      .then(response => {
+      .then((response) => {
         console.log(response);
         dispatch(receivePosts(response))})
       .catch((err) => {

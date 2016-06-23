@@ -7,12 +7,12 @@ export default class Reddit extends Component {
   }
   
   render() {
-    if(this.props.reddit.data.data){
-      var posts = this.props.reddit.data.data.data.children;
+    if (this.props.reddit.data.data){
+      const posts = this.props.reddit.data.data.data.children;
       return (
         <ul>
           {posts.map((post, i) =>
-            <li key={i}><a href={post.data.url}>{post.data.title}</a></li>
+            {<li key={i}><a href={post.data.url}>{post.data.title}</a></li>}
           )}
         </ul>
       );
