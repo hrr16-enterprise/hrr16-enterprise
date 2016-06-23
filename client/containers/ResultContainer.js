@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as actions from '../actions/index.js';
-import ResultComponent from '../components/Result.js';
+import ResultComponent from '../components/Result';
 import { push } from 'react-router-redux';
 
 const mapDispatchToProps = (dispatch) => {
