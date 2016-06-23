@@ -11,7 +11,6 @@ export default class Logout extends Component {
       </button>
     )
   }
-
 }
 
 Logout.propTypes = {
