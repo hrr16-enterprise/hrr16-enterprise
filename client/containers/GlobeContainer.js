@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Globe from '../components/Globe';
+import GlobeComponent from '../components/Globe';
 
 const mapDispatchToProps = (dispatch) => {
   const autorotate = (degPerSec) => {
@@ -102,4 +102,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Globe);
+export default connect(mapStateToProps, mapDispatchToProps)(GlobeComponent);
