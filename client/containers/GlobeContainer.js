@@ -84,12 +84,10 @@ const mapDispatchToProps = (dispatch) => {
         }, 150);
 
         const canvas = document.getElementById('basicGlobe');
-        if (window.devicePixelRatio === 2) {
-          canvas.width = 800;
-          canvas.height = 800;
-          context = canvas.getContext('2d');
-          context.scale(2, 2);
-        }
+        canvas.width = 800;
+        canvas.height = 800;
+        const context = canvas.getContext('2d');
+        context.scale(2, 2);
         globe.draw(canvas);
     }
   };
