@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as actions from '../actions/index.js';
-import GlobeComponent from '../components/Globe';
+import GlobeComponent from '../components/Globe.jsx';
 
 const mapDispatchToProps = (dispatch) => {
   return {
