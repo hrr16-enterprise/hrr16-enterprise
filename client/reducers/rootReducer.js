@@ -7,6 +7,7 @@ import auth from './authReducer.js';
 import ui from './uiReducer.js';
 import flickr from './flickrReducer';
 import reddit from './redditReducer';
+import globe from './globeReducer';
 /**
  *  Root Reducer that combines every Reducers
  *  About Reducer in Redux : http://redux.js.org/docs/basics/Reducers.html
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   ui,
   flickr,
   reddit,
-  routing,
+  globe,
+  routing
 });
 
 export default rootReducer;

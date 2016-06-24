@@ -8,7 +8,7 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <canvas id="basicGlobe" width="400" height="400"></canvas>
+        <canvas id="basicGlobe"></canvas>
       </div>
     );
   }
