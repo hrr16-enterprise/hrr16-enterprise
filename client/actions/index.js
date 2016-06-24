@@ -110,33 +110,33 @@ export const logout = () => {
   };
 
 // Reddit Actions
-export const requestPosts = () => {
-  return {
-    type: types.REQUEST_POSTS
-  };
-};
-
-export const receivePosts = (data) => {
-  return {
-    type: types.RECEIVE_POSTS,
-    payload: data
-  };
-};
-
 export const fetchReddit = () => {
   return (dispatch) => {
     return helper.getHelper('/results/reddit')
-      .then((response) => {
-        console.log(response);
-        dispatch(receivePosts(response))})
-      .catch((err) => {
-        console.log(err);
+    .then((response) => {
+      dispatch(redditSuccess(response))
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch(redditFailure())
     });
   };
 };
 
-// Globe
+export const redditSuccess = (data) => {
+  return {
+    type: types.REDDIT_SUCCESS,
+    payload: data
+  };
+};
 
+export const redditFailure = () => {
+  return {
+    type: types.REDDIT_FAILURE
+  };
+};
+
+// Globe Actions
 export const globeInstantiated = () => {
   return {
     type: types.GLOBE_INSTANTIATED
