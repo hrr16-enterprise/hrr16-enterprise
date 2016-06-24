@@ -86,8 +86,8 @@ export const lockError = (err) => {
   };
 };
 
-export const login = () => {
-  const lock = new Auth0Lock('fSQYBLZ7j667JrQFzdb3IkAAdP4SO4yd', 'bdpellet.auth0.com');
+export const login = () => {  
+  const lock = new Auth0Lock('VqCTHXNYIEshbutnUFBQSkY38O0AKOGL', 'hrr16enterprise.auth0.com');
   return dispatch => {
     lock.show((err, profile, token) => {
       if (err) {
