@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as actions from '../actions/index.js';
-import NavBarComponent from '../components/NavBar.js';
+import NavBarComponent from '../components/NavBar.jsx';
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchFlickr } from '../actions/index';
-import Flickr from '../components/Flickr';
+import Flickr from '../components/Flickr.jsx';
 
 // ES5 syntax below:
 // function mapStateToProps({ state }) {
