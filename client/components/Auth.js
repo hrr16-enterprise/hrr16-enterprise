@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class Login extends Component {
+export default class Auth extends Component {
 
   render() {
     const { errorMessage } = this.props;
-    if (!this.props.auth.isAuthenticated){
+    if (!this.props.auth.isAuthenticated) {
       return (
         <div>
           <button onTouchTap={this.props.onLoginClick} className="btn btn-primary">
@@ -20,6 +20,6 @@ export default class Login extends Component {
           </button>
         </div>
       );
-    } 
+    }
   }
 }

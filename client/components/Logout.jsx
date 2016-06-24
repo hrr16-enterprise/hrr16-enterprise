@@ -4,12 +4,13 @@ export default class Logout extends Component {
 
   render() {
     const { onLogoutClick } = this.props
-
+    if(this.props.auth.isAuthenticated){
     return (
       <button onTouchTap={this.props.onLogoutClick} className="btn btn-primary">
-        Login
+        Logout
       </button>
-    )
+      );
+    }
   }
 }
 

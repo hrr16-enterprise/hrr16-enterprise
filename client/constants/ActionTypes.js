@@ -18,4 +18,8 @@ export const SHOW_LOCK = 'SHOW_LOCK';
 export const LOCK_SUCCESS = 'LOCK_SUCCESS';
 export const LOCK_ERROR = 'LOCK_ERROR';
 
+
 export const GLOBE_INSTANTIATED = 'GLOBE_INSTANTIATED';
+
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+

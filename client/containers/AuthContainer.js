@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import * as actions from '../actions/index';
-import LoginComponent from '../components/Login.jsx';
+import * as actions from '../actions/index.js';
+import AuthComponent from '../components/Auth';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -21,4 +21,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthComponent);
