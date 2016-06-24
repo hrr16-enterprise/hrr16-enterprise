@@ -1,10 +1,11 @@
 import React from 'react';
-import Login from '../containers/LoginContainer';
+import Auth from '../containers/AuthContainer';
+
 
 export const NavBar = ({ children }) => (
   <div>
     <p>Hello world!</p>
-    <Login />
+    <Auth />
   </div>
 );
 

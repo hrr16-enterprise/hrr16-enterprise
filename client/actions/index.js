@@ -101,6 +101,19 @@ export const login = () => {
   };
 };
 
+export const logoutSuccess = () => {
+  return {
+    type: types.LOGOUT_SUCCESS
+  };
+};
+
+export const logout = () => {
+  return dispatch => {
+      localStorage.removeItem('profile');
+      localStorage.removeItem('id_token');
+      dispatch(logoutSuccess());
+    };
+  };
 // Reddit 
 
 export const requestPosts = () => {

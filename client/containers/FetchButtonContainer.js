@@ -15,7 +15,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state, ownProps) {
   return {
-    
+    auth: state.auth,
     ui: state.ui
   };
 }
