@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/index';
-import FetchButtonComponent from '../components/FetchButton';
+import FetchButtonComponent from '../components/FetchButton.jsx';
 
 function mapDispatchToProps(dispatch) {
   return {

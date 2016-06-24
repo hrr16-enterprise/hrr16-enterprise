@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/NavBar.jsx';
 import FetchButton from '../containers/FetchButtonContainer';
 import ResultContainer from '../containers/ResultContainer';
 import Globe from '../containers/GlobeContainer';

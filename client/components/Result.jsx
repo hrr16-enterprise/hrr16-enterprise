@@ -1,25 +1,24 @@
 import React from 'react';
 import { Component } from 'react';
-import Flickr from './Flickr';
-
-import Reddit from './Reddit';
+import FlickrComponent from './Flickr.jsx';
+import RedditComponent from './Reddit.jsx';
 
 class Result extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
-  componentWillMount(){
+  componentWillMount() {
     // this.props.fetchButtonClickData();
   }
 
-  render(){
+  render() {
     console.log(this.props.reddit);
     const { result, ui, flickr, reddit } = this.props;
     return(
       <div>
-        <Flickr flickr={flickr} />
-        <Reddit reddit={reddit} />
+        <FlickrComponent flickr={flickr} />
+        <RedditComponent reddit={reddit} />
       </div>
     )
   }

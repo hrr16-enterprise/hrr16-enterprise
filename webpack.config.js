@@ -31,6 +31,11 @@ module.exports = {
         exclude: /(node_modules)/,
         loaders: ['babel-loader', 'eslint-loader']
       },
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        loaders: ['babel-loader', 'eslint-loader']
+      },
       { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.jpg$/, loader: "file-loader" },

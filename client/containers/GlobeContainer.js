@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import GlobeComponent from '../components/Globe';
+import GlobeComponent from '../components/Globe.jsx';
 
 const mapDispatchToProps = (dispatch) => {
   const autorotate = (degPerSec) => {
