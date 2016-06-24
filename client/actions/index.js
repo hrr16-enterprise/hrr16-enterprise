@@ -23,7 +23,6 @@ export const popupOpen = (content, keyword = 'general') => {
   };
 };
 
-
 // Button Actions
 const updateResultState = (updatedState) => {
   return {
@@ -32,11 +31,7 @@ const updateResultState = (updatedState) => {
   };
 };
 
-// flickr
-const FLICKR_KEY = 'c47ece224080058910137d84a24cfe94';
-
-const FLICKR_URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c47ece224080058910137d84a24cfe94&safe_search=1&content_type=1&has_geo=1&extras=geo&per_page=10&format=json&nojsoncallback=1';
-
+// Flickr Actions
 export const flickrSuccess = (photos) => {
   console.log("photos: ", photos);
   return {
@@ -52,9 +47,8 @@ export const flickrFailure = () => {
 };
 
 export const fetchFlickr = () => {
-  // const url?
   return (dispatch) => {
-    return helper.getHelper(FLICKR_URL)
+    return helper.getHelper('/results/flickr')
     .then((response) => {
       dispatch(flickrSuccess(response));
     })
@@ -88,7 +82,7 @@ export const lockError = (err) => {
 
 export const login = () => {  
   const lock = new Auth0Lock('VqCTHXNYIEshbutnUFBQSkY38O0AKOGL', 'hrr16enterprise.auth0.com');
-  return dispatch => {
+  return (dispatch) => {
     lock.show((err, profile, token) => {
       if (err) {
         dispatch(lockError(err));
@@ -108,14 +102,14 @@ export const logoutSuccess = () => {
 };
 
 export const logout = () => {
-  return dispatch => {
+  return (dispatch) => {
       localStorage.removeItem('profile');
       localStorage.removeItem('id_token');
       dispatch(logoutSuccess());
     };
   };
-// Reddit 
 
+// Reddit Actions
 export const requestPosts = () => {
   return {
     type: types.REQUEST_POSTS
@@ -130,9 +124,8 @@ export const receivePosts = (data) => {
 };
 
 export const fetchReddit = () => {
-  console.log('calling reddit');
-  return dispatch => {
-    return helper.getHelper('https://www.reddit.com/new.json?sort=new?')
+  return (dispatch) => {
+    return helper.getHelper('/results/reddit')
       .then((response) => {
         console.log(response);
         dispatch(receivePosts(response))})
@@ -201,7 +194,7 @@ export const instantiateGlobe = () => {
 
   globe.draw(canvas);
 
-  return dispatch => {
+  return (dispatch) => {
     dispatch(globeInstantiated());
   };
 };
