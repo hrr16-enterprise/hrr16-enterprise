@@ -153,13 +153,14 @@ export const instantiateGlobe = () => {
 
   globe.loadPlugin(planetaryjs.plugins.earth({
     topojson: { file: 'https://raw.githubusercontent.com/darul75/ng-planetaryjs/master/public/world-110m-withlakes.json' },
-    oceans: { fill: '#000080' },
-    land: { fill: '#339966' },
-    borders: { stroke: '#008000' }
+    oceans: { fill: '#4BBCC8' },
+    land: { fill: '#50bc5d', stroke: '#46a551' },
+    borders: { stroke: '#46a551' }
   }));
 
   globe.loadPlugin(globeHelper.lakes({
-    fill: '#000080'
+    fill: '#4BBCC8',
+    stroke: '#46a551'
   }));
 
   globe.loadPlugin(planetaryjs.plugins.pings());

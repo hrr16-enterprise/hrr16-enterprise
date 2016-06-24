@@ -42,6 +42,12 @@ let lakes = (options) => {
         planet.path.context(context)(lakes);
         context.fillStyle = options.fill || 'black';
         context.fill();
+
+        if (options.stroke) {
+          context.strokeStyle = options.stroke || 'black';
+          context.lineWidth = 1;
+          context.stroke();
+        }
       });
     });
   };
