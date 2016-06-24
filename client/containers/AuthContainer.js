@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as actions from '../actions/index.js';
-import AuthComponent from '../components/Auth';
+import AuthComponent from '../components/Auth.jsx';
 
 const mapDispatchToProps = (dispatch) => {
   return {
