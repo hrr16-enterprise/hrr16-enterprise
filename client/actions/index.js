@@ -34,8 +34,8 @@ const updateResultState = (updatedState) => {
 
 // flickr
 const FLICKR_KEY = 'c47ece224080058910137d84a24cfe94';
-// need to backtick append of upload time, other constraints, geotagging?, etc.
-const FLICKR_URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c47ece224080058910137d84a24cfe94&safe_search=1&content_type=1&has_geo=1&per_page=10&format=json&nojsoncallback=1';
+
+const FLICKR_URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c47ece224080058910137d84a24cfe94&safe_search=1&content_type=1&has_geo=1&extras=geo&per_page=10&format=json&nojsoncallback=1';
 
 export const flickrSuccess = (photos) => {
   console.log("photos: ", photos);
