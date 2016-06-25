@@ -1,14 +1,23 @@
 import { GLOBE_INSTANTIATED } from '../constants/ActionTypes';
+import * as types from '../constants/ActionTypes';
 
 export default (state = {
-    exists: false
+    exists: false,
+    globe: null,
+    pings: []
   }, action) => {
   switch (action.type) {
-    case GLOBE_INSTANTIATED:
-      return Object.assign({}, state, {
+    case types.GLOBE_INSTANTIATED:
+      return {
         ...state,
-        exists: true
-      });
+        exists: true,
+        globe: action.payload
+      };
+    case types.GLOBE_PINGED:
+      return {
+        ...state,
+        pings: action.payload
+      };
     default:
       return state;
   }

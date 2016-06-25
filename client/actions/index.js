@@ -26,7 +26,6 @@ export const popupOpen = (content, keyword = 'general') => {
   };
 };
 
-
 //=======================
 // Auth Actions
 //=======================
@@ -136,13 +135,36 @@ export const fetchReddit = () => {
   };
 };
 
+//=======================
+// Event Registry Actions
+//=======================
+export const eventsSuccess = (data) => {
+  return {
+    type: types.EVENTS_SUCCESS,
+    payload: data
+  };
+};
+
+export const fetchEventRegistry = () => {
+  return (dispatch) => {
+    jsonp('http://eventregistry.org/json/overview?action=getRecentActivity&content_type=1', (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        dispatch(eventsSuccess(data));
+      }
+    });
+  };
+};
+
 
 //=======================
 // Globe Actions
 //=======================
-export const globeInstantiated = () => {
+export const globeInstantiated = (globe) => {
   return {
-    type: types.GLOBE_INSTANTIATED
+    type: types.GLOBE_INSTANTIATED,
+    payload: globe
   };
 };
 
@@ -180,15 +202,6 @@ export const instantiateGlobe = () => {
 
   globe.projection.scale(175).translate([175, 175]).rotate([0, -10, 0]);
 
-  const colors = ['red', 'yellow', 'white', 'orange', 'green', 'cyan', 'pink'];
-
-  setInterval(() => {
-    const lat = Math.random() * 170 - 85;
-    const lng = Math.random() * 360 - 180;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    globe.plugins.pings.add(lng, lat, { color, ttl: 2000, angle: Math.random() * 10 });
-  }, 150);
-
   const canvas = document.getElementById('basicGlobe');
   canvas.width = 800;
   canvas.height = 800;
@@ -199,29 +212,21 @@ export const instantiateGlobe = () => {
   globe.draw(canvas);
 
   return (dispatch) => {
-    dispatch(globeInstantiated());
+    dispatch(globeInstantiated(globe));
   };
 };
 
+export const pingGlobe = (globe, lat, lng) => {
+  const loc = { lat, lng };
 
-//=======================
-// Event Registry Actions
-//=======================
-export const eventsSuccess = (data) => {
+  setInterval(() => {
+    const colors = ['red', 'yellow', 'white', 'orange', 'green', 'cyan', 'pink'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    globe.plugins.pings.add(loc.lng, loc.lat, { color, ttl: 2000, angle: Math.random() * 10 });
+  }, 1000);
+  
   return {
-    type: types.EVENTS_SUCCESS,
-    payload: data
+    type: types.GLOBE_PINGED,
+    payload: loc
   };
-};
-
-export const fetchEventRegistry = () => {
-  return (dispatch) => {
-    jsonp('http://eventregistry.org/json/overview?action=getRecentActivity&content_type=1', (err, data) => {
-      if (err) {
-        console.error(err);
-      } else {
-        dispatch(eventsSuccess(data));
-      }
-    });
-  };
-};
+}
