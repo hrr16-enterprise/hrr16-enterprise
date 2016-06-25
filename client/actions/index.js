@@ -7,7 +7,9 @@ import planetaryjs from 'planetary.js';
 import axios from 'axios';
 import jsonp from 'jsonp';
 
+//=======================
 // UI Actions
+//=======================
 export const popupClose = () => {
   return {
     type: types.POPUP_CLOSE
@@ -24,15 +26,59 @@ export const popupOpen = (content, keyword = 'general') => {
   };
 };
 
-// Button Actions
-const updateResultState = (updatedState) => {
+
+//=======================
+// Auth Actions
+//=======================
+export const lockSuccess = (profile, token) => {
   return {
-    type: types.UPDATE_RESULT_STATE,
-    updatedResultState: updatedState
+    type: types.LOCK_SUCCESS,
+    profile,
+    token
   };
 };
 
+export const lockFailure = (err) => {
+  return {
+    type: types.LOCK_FAILURE,
+    err
+  };
+};
+
+export const login = () => {  
+  const lock = new Auth0Lock('VqCTHXNYIEshbutnUFBQSkY38O0AKOGL', 'hrr16enterprise.auth0.com');
+  return (dispatch) => {
+    lock.show((err, profile, token) => {
+      if (err) {
+        console.error(err);
+        dispatch(lockFailure(err));
+      } else {
+        localStorage.setItem('profile', JSON.stringify(profile));
+        localStorage.setItem('id_token', token);
+        dispatch(lockSuccess(profile, token));
+      }
+    });
+  };
+};
+
+export const logout = () => {
+  return (dispatch) => {
+    localStorage.removeItem('profile');
+    localStorage.removeItem('id_token');
+    dispatch(logoutSuccess());
+  };
+};
+
+export const logoutSuccess = () => {
+  return {
+    type: types.LOGOUT_SUCCESS
+  };
+};
+
+
+//=======================
 // Flickr Actions
+//=======================
 export const flickrSuccess = (photos) => {
   console.log("photos: ", photos);
   return {
@@ -54,76 +100,16 @@ export const fetchFlickr = () => {
       dispatch(flickrSuccess(response));
     })
     .catch((err) => {
+      console.error(err);
       dispatch(flickrFailure());
     });
   };
 };
 
 
-export const showLock = () => {
-  return {
-    type: types.SHOW_LOCK
-  };
-};
-
-export const lockSuccess = (profile, token) => {
-  return {
-    type: types.LOCK_SUCCESS,
-    profile,
-    token
-  };
-};
-
-export const lockError = (err) => {
-  return {
-    type: types.LOCK_ERROR,
-    err
-  };
-};
-
-export const login = () => {  
-  const lock = new Auth0Lock('VqCTHXNYIEshbutnUFBQSkY38O0AKOGL', 'hrr16enterprise.auth0.com');
-  return (dispatch) => {
-    lock.show((err, profile, token) => {
-      if (err) {
-        dispatch(lockError(err));
-        return;
-      }
-      localStorage.setItem('profile', JSON.stringify(profile));
-      localStorage.setItem('id_token', token);
-      dispatch(lockSuccess(profile, token));
-    });
-  };
-};
-
-export const logoutSuccess = () => {
-  return {
-    type: types.LOGOUT_SUCCESS
-  };
-};
-
-export const logout = () => {
-  return (dispatch) => {
-      localStorage.removeItem('profile');
-      localStorage.removeItem('id_token');
-      dispatch(logoutSuccess());
-    };
-  };
-
+//=======================
 // Reddit Actions
-export const fetchReddit = () => {
-  return (dispatch) => {
-    return helper.getHelper('/results/reddit')
-    .then((response) => {
-      dispatch(redditSuccess(response))
-    })
-    .catch((err) => {
-      console.error(err);
-      dispatch(redditFailure())
-    });
-  };
-};
-
+//=======================
 export const redditSuccess = (data) => {
   return {
     type: types.REDDIT_SUCCESS,
@@ -137,7 +123,23 @@ export const redditFailure = () => {
   };
 };
 
+export const fetchReddit = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/reddit')
+    .then((response) => {
+      dispatch(redditSuccess(response))
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch(redditFailure())
+    });
+  };
+};
+
+
+//=======================
 // Globe Actions
+//=======================
 export const globeInstantiated = () => {
   return {
     type: types.GLOBE_INSTANTIATED
@@ -200,22 +202,24 @@ export const instantiateGlobe = () => {
   };
 };
 
-// Event Registry
 
-export const receiveEvents = (data) => {
+//=======================
+// Event Registry Actions
+//=======================
+export const eventsSuccess = (data) => {
   return {
-    type: types.RECEIVE_EVENTS,
+    type: types.EVENTS_SUCCESS,
     payload: data
   };
 };
 
 export const fetchEventRegistry = () => {
-  return dispatch => {
+  return (dispatch) => {
     jsonp('http://eventregistry.org/json/overview?action=getRecentActivity&content_type=1', (err, data) => {
       if (err) {
-        // handle error
+        console.error(err);
       } else {
-        dispatch(receiveEvents(data))
+        dispatch(eventsSuccess(data));
       }
     });
   };
