@@ -2,9 +2,10 @@
 export const POPUP_CLOSE = 'POPUP_CLOSE';
 export const POPUP_OPEN = 'POPUP_OPEN';
 
-// Button Actions
-export const REQUEST_POSTS = 'REQUEST_POSTS';
-export const RECEIVE_POSTS = 'RECEIVE_POSTS';
+// Reddit Actions
+export const FETCH_REDDIT = 'FETCH_REDDIT';
+export const REDDIT_SUCCESS = 'REDDIT_SUCCESS';
+export const REDDIT_FAILURE = 'REDDIT_FAILURE';
 export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT';
 export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT';
 

@@ -1,13 +1,18 @@
 import * as types from '../constants/ActionTypes';
 
 export default (state = {
-  data: []
+  result: []
 }, action) => {
   switch (action.type) {
-    case types.RECEIVE_POSTS:
+    case types.REDDIT_SUCCESS:
     return {
       ...state,
-      data: action.payload
+      result: action.payload
+    };
+    case types.REDDIT_FAILURE:
+    return {
+      ...state,
+      result: []
     };
     default:
     return state;
