@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as actions from '../actions/index.js';
 import { connect } from 'react-redux';
 import { fetchFlickr } from '../actions/index';
 import Flickr from '../components/Flickr.jsx';
@@ -9,8 +9,11 @@ import Flickr from '../components/Flickr.jsx';
 // }
 
 // ES6 syntax below:
-function mapStateToProps({ flickr }) {
-  return { flickr };
+function mapStateToProps(state) {
+  return { 
+    flickr: state.flickr,
+    globe: state.globe
+  };
 }
 
 export default connect(mapStateToProps)(Flickr);

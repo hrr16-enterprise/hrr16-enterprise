@@ -9,16 +9,16 @@ class Result extends Component {
     super(props);
   }
 
-  componentWillMount() {
+  // componentWillMount() {
     // this.props.fetchButtonClickData();
-  }
+  // }
 
   render() {
     console.log(this.props.reddit);
-    const { result, ui, flickr, reddit, eventRegistry } = this.props;
+    const { result, ui, flickr, reddit, pingGlobe, eventRegistry } = this.props;
     return(
       <div>
-        <FlickrComponent flickr={flickr} />
+        <FlickrComponent flickr={flickr} pingGlobe={pingGlobe}/>
         <RedditComponent reddit={reddit} />
         <EventRegistryComponent eventRegistry={eventRegistry}/>
       </div>

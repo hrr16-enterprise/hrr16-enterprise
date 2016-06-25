@@ -17,10 +17,10 @@ const rootReducer = combineReducers({
   form: formReducer, // Reducer provided by 'redux-form' module
   auth,
   ui,
+  globe,
   flickr,
   reddit,
   eventRegistry,
-  globe,
   routing
 });
 

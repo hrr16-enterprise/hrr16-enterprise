@@ -25,3 +25,5 @@ export const EVENTS_SUCCESS = 'EVENTS_SUCCESS';
 
 // Globe Actions
 export const GLOBE_INSTANTIATED = 'GLOBE_INSTANTIATED';
+export const GLOBE_PINGED = 'GLOBE_PINGED';
+
