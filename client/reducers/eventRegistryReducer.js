@@ -4,7 +4,7 @@ export default (state = {
   data: []
 }, action) => {
   switch (action.type) {
-    case types.RECEIVE_EVENTS:
+    case types.EVENTS_SUCCESS:
     return {
       ...state,
       data: action.payload
