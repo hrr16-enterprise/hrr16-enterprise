@@ -5,6 +5,7 @@ import { push } from 'react-router-redux';
 import { reset } from 'redux-form';
 import planetaryjs from 'planetary.js';
 import axios from 'axios';
+import jsonp from 'jsonp';
 
 // UI Actions
 export const popupClose = () => {
@@ -196,5 +197,26 @@ export const instantiateGlobe = () => {
 
   return (dispatch) => {
     dispatch(globeInstantiated());
+  };
+};
+
+// Event Registry
+
+export const receiveEvents = (data) => {
+  return {
+    type: types.RECEIVE_EVENTS,
+    payload: data
+  };
+};
+
+export const fetchEventRegistry = () => {
+  return dispatch => {
+    jsonp('http://eventregistry.org/json/overview?action=getRecentActivity&content_type=1', (err, data) => {
+      if (err) {
+        // handle error
+      } else {
+        dispatch(receiveEvents(data))
+      }
+    });
   };
 };
