@@ -28,6 +28,9 @@ export const NYTIMES_FAILURE = 'NYTIMES_FAILURE';
 // Event Registry Actions
 export const EVENTS_SUCCESS = 'EVENTS_SUCCESS';
 
+// Youtube Actions
+export const YOUTUBE_SUCCESS = 'YOUTUBE_SUCCESS'
+
 // Globe Actions
 export const GLOBE_INSTANTIATED = 'GLOBE_INSTANTIATED';
 export const GLOBE_PINGED = 'GLOBE_PINGED';
