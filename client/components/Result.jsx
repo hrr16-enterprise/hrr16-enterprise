@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import FlickrComponent from './Flickr.jsx';
 import RedditComponent from './Reddit.jsx';
+import NYTimesComponent from './NYTimes.jsx';
 import EventRegistryComponent from './EventRegistry.jsx';
 
 class Result extends Component {
@@ -15,11 +16,12 @@ class Result extends Component {
 
   render() {
     console.log(this.props.reddit);
-    const { result, ui, flickr, reddit, pingGlobe, eventRegistry } = this.props;
+    const { result, ui, flickr, reddit, nytimes, pingGlobe, eventRegistry } = this.props;
     return(
       <div>
         <FlickrComponent flickr={flickr} pingGlobe={pingGlobe}/>
         <RedditComponent reddit={reddit} />
+        <NYTimesComponent nytimes={nytimes} />
         <EventRegistryComponent eventRegistry={eventRegistry}/>
       </div>
     )
