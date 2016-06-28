@@ -11,6 +11,7 @@ import nytimes from './nyTimesReducer';
 import globe from './globeReducer';
 import eventRegistry from './eventRegistryReducer';
 import youtube from './youtubeReducer.js';
+import yelp from './yelpReducer';
 
 /**
  *  Root Reducer that combines every Reducers
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   nytimes,
   eventRegistry,
   youtube,
+  yelp,
   routing
 });
 

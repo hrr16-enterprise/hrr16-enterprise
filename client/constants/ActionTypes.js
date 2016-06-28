@@ -35,3 +35,7 @@ export const YOUTUBE_SUCCESS = 'YOUTUBE_SUCCESS'
 export const GLOBE_INSTANTIATED = 'GLOBE_INSTANTIATED';
 export const GLOBE_PINGED = 'GLOBE_PINGED';
 
+// Yelp Actions
+export const FETCH_YELP = 'FETCH_YELP';
+export const YELP_SUCCESS = 'YELP_SUCCESS';
+export const YELP_FAILURE = 'YELP_FAILURE';

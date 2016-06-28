@@ -296,3 +296,32 @@ export const showPosition = (position) => {
   console.log(position);
   return position;
 }
+
+//=======================
+// Yelp
+//=======================
+export const YelpSuccess = (data) => {
+  return {
+    type: types.YELP_SUCCESS,
+    payload: data
+  };
+};
+
+export const YelpFailure = (err) => {
+  return {
+    type: types.YELP_FAILURE,
+    err: err
+  };
+};
+
+export const fetchYelp = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/yelp')
+    .then((response) => {
+      dispatch(YelpSuccess(response))
+    })
+    .catch((err) => {
+      dispatch(YelpFailure(err))
+    });
+  };
+};

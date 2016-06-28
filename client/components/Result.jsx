@@ -5,6 +5,7 @@ import RedditComponent from './Reddit.jsx';
 import NYTimesComponent from './NYTimes.jsx';
 import EventRegistryComponent from './EventRegistry.jsx';
 import YoutubeComponent from './Youtube.jsx';
+import YelpComponent from './Yelp.jsx';
 
 class Result extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Result extends Component {
   // }
 
   render() {
-    const { result, ui, flickr, reddit, nytimes, pingGlobe, eventRegistry, youtube } = this.props;
+    const { result, ui, flickr, reddit, nytimes, pingGlobe, eventRegistry, youtube, yelp } = this.props;
     return(
       <div>
         <FlickrComponent flickr={flickr} pingGlobe={pingGlobe} />
@@ -24,6 +25,7 @@ class Result extends Component {
         <NYTimesComponent nytimes={nytimes} />
         <EventRegistryComponent eventRegistry={eventRegistry} />
         <YoutubeComponent youtube={youtube} />
+        <YelpComponent yelp={yelp} />
       </div>
     )
   };

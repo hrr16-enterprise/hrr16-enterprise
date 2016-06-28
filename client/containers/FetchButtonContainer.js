@@ -12,6 +12,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(actions.fetchNYTimes());
       dispatch(actions.fetchEventRegistry());
       dispatch(actions.fetchYoutube());
+      dispatch(actions.fetchYelp());
     }
   };
 }
