@@ -1,5 +1,7 @@
 const FLICKR_KEY = 'c47ece224080058910137d84a24cfe94';
+const NYTIMES_KEY = '6100344d597e4ebfb39d602a70beb817';
 
 module.exports = {
-  FLICKR_KEY
+  FLICKR_KEY,
+  NYTIMES_KEY
 };

@@ -20,6 +20,11 @@ export const FETCH_FLICKR = 'FETCH_FLICKR';
 export const FLICKR_SUCCESS = 'FLICKR_SUCCESS';
 export const FLICKR_FAILURE = 'FLICKR_FAILURE';
 
+// NYTimes Actionsny
+export const FETCH_NYTIMES = 'FETCH_NYTIMES';
+export const NYTIMES_SUCCESS = 'NYTIMES_SUCCESS';
+export const NYTIMES_FAILURE = 'NYTIMES_FAILURE';
+
 // Event Registry Actions
 export const EVENTS_SUCCESS = 'EVENTS_SUCCESS';
 

@@ -30,4 +30,17 @@ router.get('/reddit', (req, res) => {
   })
 });
 
+//nytimes request handlers
+router.get('/nytimes', (req, res) => {
+  const nyTimesUrl = 'http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_geo/Europe?fields=all&' + 'api-key=' + private.NYTIMES_KEY;
+  return helper.getHelper(nyTimesUrl)
+  .then((response) => {
+    res.send(response.data);
+  })
+  .catch((error) => {
+    console.error(error);
+    res.send(error);
+  })
+});
+
 module.exports = router;

@@ -152,7 +152,7 @@ export const nyTimesFailure = () => {
   };
 };
 
-export const nyTimesFlickr = () => {
+export const fetchNYTimes = () => {
   return (dispatch) => {
     return helper.getHelper('/results/nytimes')
     .then((response) => {

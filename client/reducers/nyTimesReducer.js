@@ -9,6 +9,14 @@ export default (state = {
       ...state,
       result: action.payload
     };
+    case types.NYTIMES_FAILURE:
+    return {
+      ...state,
+      result: []
+    };
+    default:
+    return state;
+  }
   //   case types.GLOBE_INSTANTIATED:
   //   return {
   //     ...state,
@@ -16,5 +24,4 @@ export default (state = {
   //   };
   //   default:
   //   return state;
-  // }
 }

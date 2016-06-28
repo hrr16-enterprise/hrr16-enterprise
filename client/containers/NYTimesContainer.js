@@ -1,6 +1,6 @@
 import * as actions from '../actions/index.js';
 import { connect } from 'react-redux';
-import { fetchNYtimes } from '../actions/index';
+import { fetchNYTimes } from '../actions/index';
 import NYTimes from '../components/NYTimes.jsx';
 
 // ES5 syntax below:
@@ -9,11 +9,8 @@ import NYTimes from '../components/NYTimes.jsx';
 // }
 
 // ES6 syntax below:
-function mapStateToProps(state) {
-  return { 
-    nytimes: state.nytimes,
-    globe: state.globe
-  };
+function mapStateToProps({ nytimes }) {
+  return { nytimes };
 }
 
 export default connect(mapStateToProps)(NYTimes);
