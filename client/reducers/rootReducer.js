@@ -10,6 +10,8 @@ import reddit from './redditReducer';
 import nytimes from './nyTimesReducer';
 import globe from './globeReducer';
 import eventRegistry from './eventRegistryReducer';
+import youtube from './youtubeReducer.js';
+
 /**
  *  Root Reducer that combines every Reducers
  *  About Reducer in Redux : http://redux.js.org/docs/basics/Reducers.html
@@ -23,6 +25,7 @@ const rootReducer = combineReducers({
   reddit,
   nytimes,
   eventRegistry,
+  youtube,
   routing
 });
 

@@ -186,6 +186,27 @@ export const fetchEventRegistry = () => {
   };
 };
 
+//=======================
+// YouTube Actions
+//=======================
+export const youtubeSuccess = (data) => {
+  return {
+    type: types.YOUTUBE_SUCCESS,
+    payload: data
+  };
+};
+
+export const fetchYoutube = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/youtube')
+    .then((response) => {
+      dispatch(youtubeSuccess(response));
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  };
+};
 
 //=======================
 // Globe Actions

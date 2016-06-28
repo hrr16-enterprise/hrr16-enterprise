@@ -11,6 +11,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(actions.fetchFlickr());
       dispatch(actions.fetchNYTimes());
       dispatch(actions.fetchEventRegistry());
+      dispatch(actions.fetchYoutube());
     }
   };
 }
