@@ -136,6 +136,35 @@ export const fetchReddit = () => {
 };
 
 //=======================
+// NYTimes Actions
+//=======================
+export const nyTimesSuccess = (articleData) => {
+  return {
+    type: types.NYTIMES_SUCCESS,
+    payload: articleData
+  };
+};
+
+export const nyTimesFailure = () => {
+  return {
+    type: types.NYTIMES_FAILURE
+  };
+};
+
+export const fetchNYTimes = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/nytimes')
+    .then((response) => {
+      dispatch(nyTimesSuccess(response));
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch(nyTimesFailure());
+    });
+  };
+};
+
+//=======================
 // Event Registry Actions
 //=======================
 export const eventsSuccess = (data) => {

@@ -7,6 +7,7 @@ import auth from './authReducer.js';
 import ui from './uiReducer.js';
 import flickr from './flickrReducer';
 import reddit from './redditReducer';
+import nytimes from './nyTimesReducer';
 import globe from './globeReducer';
 import eventRegistry from './eventRegistryReducer';
 /**
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   globe,
   flickr,
   reddit,
+  nytimes,
   eventRegistry,
   routing
 });

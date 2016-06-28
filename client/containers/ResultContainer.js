@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
     ui: state.ui,
     flickr: state.flickr,
     reddit: state.reddit,
+    nytimes: state.nytimes,
     eventRegistry: state.eventRegistry
   };
 };

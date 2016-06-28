@@ -9,6 +9,7 @@ function mapDispatchToProps(dispatch) {
     getData: () => {
       dispatch(actions.fetchReddit());
       dispatch(actions.fetchFlickr());
+      dispatch(actions.fetchNYTimes());
       dispatch(actions.fetchEventRegistry());
     }
   };
