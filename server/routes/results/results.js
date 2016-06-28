@@ -110,22 +110,21 @@ router.get('/youtube', (req, res) => {
 // Yelp Request Handlers
 //=======================
 const yelp = private.YELP_KEY;
-const search_params = {ll:'45.5306825,-122.6998866', 
+const search_params = {ll:null, 
                         limit: 10,
                         deals_filter: true, 
-                        radius_filter:8000
+                        radius_filter: 8000
                       };
-
-router.get('/yelp', (req, res) => {
+router.post('/yelp', (req, res) => {
+  search_params.ll =  req.body.latitude + ',' 
+                    + req.body.longitude;
   return yelp.search(search_params)
-  .then(function(data){
+  .then((data) => {
     res.send(data.businesses);
   })
-  .catch(function(err){
-    console.log(err);
+  .catch((err) => {
+    res.send(err);
   });
 });
-
-
 
 module.exports = router;

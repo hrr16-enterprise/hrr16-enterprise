@@ -6,7 +6,6 @@ import { reset } from 'redux-form';
 import planetaryjs from 'planetary.js';
 import axios from 'axios';
 import jsonp from 'jsonp';
-
 //=======================
 // UI Actions
 //=======================
@@ -313,15 +312,25 @@ export const YelpFailure = (err) => {
     err: err
   };
 };
-
+// yelp fetch including geolocation
+// geolcation takes ~5 seconds 
 export const fetchYelp = () => {
-  return (dispatch) => {
-    return helper.getHelper('/results/yelp')
-    .then((response) => {
-      dispatch(YelpSuccess(response))
-    })
-    .catch((err) => {
-      dispatch(YelpFailure(err))
-    });
-  };
+  var location;
+  navigator.geolocation.getCurrentPosition((position) => {
+      location = position.coords
+  });
+      return (dispatch) => {
+        setTimeout(function(){
+          return helper.postHelper('/results/yelp',
+            { longitude:location.longitude,
+              latitude: location.latitude
+            })
+          .then((response) => {
+            dispatch(YelpSuccess(response))
+          })
+          .catch((err) => {
+            dispatch(YelpFailure(err))
+          });
+        }, 5000);
+      };
 };
