@@ -1,5 +1,5 @@
-const FLICKR_KEY = 'c47ece224080058910137d84a24cfe94';
-const NYTIMES_KEY = '6100344d597e4ebfb39d602a70beb817';
+const FLICKR_KEY = process.env.FLICKR_KEY;
+const NYTIMES_KEY = process.env.NYTIMES_KEY;
 
 module.exports = {
   FLICKR_KEY,
