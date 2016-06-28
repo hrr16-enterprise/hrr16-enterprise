@@ -12,15 +12,15 @@ export default class Flickr extends Component {
   }
   
 
-  render() {
+  render() {    
     if (!this.props.flickr.result.data) {
       return (
-      <div>AWAITING FETCH INVOKE...</div>
+      <div className="placeholder">AWAITING FETCH INVOKE...</div>
       );
     }
     
     return (
-      <div>
+      <div className="flickr">
         <img src={'https://farm' + this.props.flickr.result.data.photos.photo[0].farm + '.staticflickr.com/' + this.props.flickr.result.data.photos.photo[0].server + '/' + this.props.flickr.result.data.photos.photo[0].id + '_' + this.props.flickr.result.data.photos.photo[0].secret + '_n.jpg'}/>
       </div>
     );

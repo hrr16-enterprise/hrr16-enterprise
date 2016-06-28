@@ -15,7 +15,7 @@ export default class FetchButton extends Component {
         );
     } else {
       return (
-        <div> Please Log In</div>
+        <div className="placeholder"> Please Log In</div>
         );
     }
   }

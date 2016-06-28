@@ -78,7 +78,6 @@ export const logoutSuccess = () => {
 // Flickr Actions
 //=======================
 export const flickrSuccess = (photos) => {
-  console.log("photos: ", photos);
   return {
     type: types.FLICKR_SUCCESS,
     payload: photos
