@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'underscore';
 
 export default class Yelp extends Component {
   constructor(props) {
@@ -6,12 +7,16 @@ export default class Yelp extends Component {
   }
   
   render() {
-    if (this.props){
-      const posts = this.props;
-      console.log(posts);
+    if (this.props.yelp.result.data){
+      const posts = this.props.yelp.result.data;
       return (
         <ul>
-          Yelp stuff goes here. 
+          {posts.map((post) =>
+            <li>
+              {post.name}
+              <p>{(Math.floor(post.distance)*0.0006).toFixed(2)} mi Away</p>
+            </li>
+          )} 
         </ul>
       );
     }
