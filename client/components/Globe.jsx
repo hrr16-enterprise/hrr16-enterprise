@@ -7,9 +7,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
-        <canvas id="basicGlobe"></canvas>
-      </div>
+      <div id="earth_div"></div>
     );
   }
 }

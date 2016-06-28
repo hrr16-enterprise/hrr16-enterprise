@@ -8,8 +8,8 @@ export const CoreLayout = ({ children }) => (
   <div>
     <NavBar />
     <FetchButton />
-    <ResultContainer />
     <Globe />
+    <ResultContainer />
   </div>
 );
 
