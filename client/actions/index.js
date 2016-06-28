@@ -280,3 +280,19 @@ export const pingGlobe = (globe, lat, lng) => {
     payload: loc
   };
 }
+
+//=======================
+// Geolocation
+//=======================
+export const getLocation = () => {
+    if (navigator.geolocation) {
+        return navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+export const showPosition = (position) => {
+  console.log(position);
+  return position;
+}
