@@ -9,12 +9,6 @@ export default class NYTimes extends Component {
   // 
   // componentWillReceiveProps(object) {
   // }
-    componentWillReceiveProps(object) {
-    if (this.props.nytimes.result.data) {
-      console.log("this is NYTIMES: ", this.props.nytimes.result.data.results);
-    }
-  }
-
   render() {
     if (!this.props.nytimes.result.data) {
       return (

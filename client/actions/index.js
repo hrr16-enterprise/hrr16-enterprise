@@ -139,7 +139,6 @@ export const fetchReddit = () => {
 // NYTimes Actions
 //=======================
 export const nyTimesSuccess = (articleData) => {
-  console.log("article data: ", articleData);
   return {
     type: types.NYTIMES_SUCCESS,
     payload: articleData

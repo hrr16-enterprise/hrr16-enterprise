@@ -32,7 +32,12 @@ router.get('/reddit', (req, res) => {
 
 //nytimes request handlers
 router.get('/nytimes', (req, res) => {
-  const nyTimesUrl = 'http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_geo/Europe?fields=all&' + 'api-key=' + private.NYTIMES_KEY;
+  
+  // location randomizer for NY Times api call
+  const nyTimesLocations = ["Europe", "United States", "Australia", "South America", "Russia", "China", "Japan", "Middle East", "Africa", "Central America", "India", "Mexico", "Venezuela", "Spain", "France", "Vietnam", "Thailand", "South Africa", "Kenya"];
+  var randomNYTimesLocation = nyTimesLocations[Math.floor(Math.random()*nyTimesLocations.length)];
+  
+  const nyTimesUrl = 'http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_geo/' + randomNYTimesLocation  + '?fields=all&' + 'api-key=' + private.NYTIMES_KEY;
   return helper.getHelper(nyTimesUrl)
   .then((response) => {
     res.send(response.data);
