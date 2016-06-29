@@ -17,7 +17,7 @@ export default class Yelp extends Component {
               {post.name}
               <p><img src = {post.image_url}/></p>
               <p><img src = {post.rating_img_url}/></p> 
-               <p>{post.deals[0].options[0].title}</p>
+              <p>{post.deals[0].options[0].title}</p>
               <p>{(Math.floor(post.distance)*0.0006).toFixed(2)} mi Away</p>
             </li>
           )} 
@@ -25,7 +25,7 @@ export default class Yelp extends Component {
       );
     }
     return (
-    <div>Yelp stuff goes here!</div>
+      <div>Yelp stuff goes here!</div>
     );
   }
 }

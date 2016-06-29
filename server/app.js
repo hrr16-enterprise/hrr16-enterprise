@@ -17,5 +17,5 @@ app.use('/results', results);
 app.use('/*', (req, res) => {
   res.redirect('/');
 });
-console.log('KEY:',process.env.FLICKR_KEY);
+
 module.exports = app;

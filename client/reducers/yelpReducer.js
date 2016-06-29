@@ -12,7 +12,7 @@ export default (state = {
     case types.YELP_FAILURE:
     return{
       ...state,
-      result:action.err
+      result: action.err
     };
     default:
     return state;
