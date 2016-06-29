@@ -14,7 +14,7 @@ client/bower_components/
 build/
 
 ## API keys ##
-
+.env
 ## Others ##
 .floo
 .flooignore

@@ -4,7 +4,9 @@ const Promise = require('bluebird');
 const helper = require('../../services/helper.js');
 const private = require('../../private/private.js');
 
-//flickr request handlers
+//=======================
+// Flicker Request Handlers
+//=======================
 router.get('/flickr', (req, res) => {
   const flickrUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + private.FLICKR_KEY + '&safe_search=1&content_type=1&has_geo=1&extras=geo&per_page=10&format=json&nojsoncallback=1';
   return helper.getHelper(flickrUrl)
@@ -17,8 +19,10 @@ router.get('/flickr', (req, res) => {
   })
 });
 
+//=======================
+// Reddit Request Handlers
+//=======================
 
-//reddit request handlers
 router.get('/reddit', (req, res) => {
   const redditUrl = 'https://www.reddit.com/new.json?sort=new?';
   return helper.getHelper(redditUrl)
@@ -100,6 +104,27 @@ router.get('/youtube', (req, res) => {
     console.error(error);
     res.send(error);
   })
+});
+
+//=======================
+// Yelp Request Handlers
+//=======================
+const yelp = private.YELP_KEY;
+const search_params = {ll:null, 
+                        limit: 10,
+                        deals_filter: true, 
+                        radius_filter: 8000
+                      };
+router.post('/yelp', (req, res) => {
+  search_params.ll =  req.body.latitude + ',' 
+                    + req.body.longitude;
+  return yelp.search(search_params)
+  .then((data) => {
+    res.send(data.businesses);
+  })
+  .catch((err) => {
+    res.send(err);
+  });
 });
 
 module.exports = router;
