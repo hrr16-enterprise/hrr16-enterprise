@@ -281,22 +281,6 @@ export const pingGlobe = (globe, lat, lng) => {
 }
 
 //=======================
-// Geolocation
-//=======================
-export const getLocation = () => {
-    if (navigator.geolocation) {
-        return navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-export const showPosition = (position) => {
-  console.log(position);
-  return position;
-}
-
-//=======================
 // Yelp
 //=======================
 export const YelpSuccess = (data) => {
@@ -320,7 +304,7 @@ export const fetchYelp = () => {
       location = position.coords
   });
       return (dispatch) => {
-        setTimeout(function(){
+        setTimeout(() => {
           return helper.postHelper('/results/yelp',
             { longitude:location.longitude,
               latitude: location.latitude
@@ -334,3 +318,4 @@ export const fetchYelp = () => {
         }, 5000);
       };
 };
+
