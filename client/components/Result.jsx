@@ -20,7 +20,7 @@ class Result extends Component {
   render() {
     const { result, ui, flickr, reddit, nytimes, pingGlobe, eventRegistry, youtube, yelp, usGeoSurvey } = this.props;
     return(
-      <div>
+      <div className="result">
         <FlickrComponent flickr={flickr} pingGlobe={pingGlobe} />
         <RedditComponent reddit={reddit} />
         <NYTimesComponent nytimes={nytimes} />

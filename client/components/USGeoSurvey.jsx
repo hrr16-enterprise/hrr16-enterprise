@@ -9,7 +9,7 @@ export default class USGeoSurvey extends Component {
   render() {
     if (!this.props.usGeoSurvey.result.features) {
       return (
-        <div>Here lies dirt...</div>
+        <div></div>
       );
     }
     
