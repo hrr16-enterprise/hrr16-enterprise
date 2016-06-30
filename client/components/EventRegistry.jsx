@@ -19,7 +19,7 @@ export default class EventRegistry extends Component {
       );
     }
     return (
-    <div>This is where the latest Event Registry items go!</div>
+    <div></div>
     );
   }
 }

@@ -12,7 +12,7 @@ export default class NYTimes extends Component {
   render() {
     if (!this.props.nytimes.result.data) {
       return (
-      <div className="placeholder">AWAITING FETCH INVOKE (NY Times)...</div>
+      <div className="placeholder"></div>
       );
     }
     

@@ -8,7 +8,7 @@ export default class Youtube extends Component {
   render() {
     if (!this.props.youtube.result.data) {
       return (
-        <div>Youtube will show here</div>
+        <div></div>
       );
     }
     

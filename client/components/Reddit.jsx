@@ -17,7 +17,7 @@ export default class Reddit extends Component {
       );
     }
     return (
-    <div>This is where the latest Reddit Posts should go!</div>
+    <div></div>
     );
   }
 }
