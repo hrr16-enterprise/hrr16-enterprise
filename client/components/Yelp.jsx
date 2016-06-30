@@ -9,7 +9,6 @@ export default class Yelp extends Component {
   render() {
     if (this.props.yelp.result.data){
       const posts = this.props.yelp.result.data;
-      console.log(posts);
       return (
         <ul>
           {posts.map((post) =>

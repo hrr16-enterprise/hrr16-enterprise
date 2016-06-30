@@ -23,7 +23,8 @@ const mapStateToProps = (state) => {
     nytimes: state.nytimes,
     youtube: state.youtube,
     eventRegistry: state.eventRegistry,
-    yelp: state.yelp
+    yelp: state.yelp,
+    usGeoSurvey: state.usGeoSurvey
   };
 };
 

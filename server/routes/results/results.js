@@ -127,4 +127,19 @@ router.post('/yelp', (req, res) => {
   });
 });
 
+
+//=========================================
+// US Geological Survey Request Handlers
+//=========================================
+router.get('/usgeo', (req, res) => {
+  const usGeoUrl = 'http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time'
+  return helper.getHelper(usGeoUrl)
+  .then((response) => {
+    res.send(response.data);
+  })
+  .catch((err) => {
+    res.send(err);
+  });
+});
+
 module.exports = router;

@@ -13,6 +13,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(actions.fetchEventRegistry());
       dispatch(actions.fetchYoutube());
       dispatch(actions.fetchYelp());
+      dispatch(actions.fetchUSGeoSurvey());
     }
   };
 }
