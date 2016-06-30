@@ -8,7 +8,6 @@ export default class Reddit extends Component {
   render() {
     if (this.props.reddit.result.data){
       const posts = this.props.reddit.result.data.data.children;
-      console.log(posts);
       return (
         <ul>
           {posts.map((post, i) =>

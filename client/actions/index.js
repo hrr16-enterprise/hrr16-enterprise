@@ -5,9 +5,9 @@ import { reset } from 'redux-form';
 import axios from 'axios';
 import jsonp from 'jsonp';
 
-//=======================
+//=================================
 // UI Actions
-//=======================
+//=================================
 export const popupClose = () => {
   return {
     type: types.POPUP_CLOSE
@@ -24,9 +24,10 @@ export const popupOpen = (content, keyword = 'general') => {
   };
 };
 
-//=======================
+
+//=================================
 // Auth Actions
-//=======================
+//=================================
 export const lockSuccess = (profile, token) => {
   return {
     type: types.LOCK_SUCCESS,
@@ -73,141 +74,9 @@ export const logoutSuccess = () => {
 };
 
 
-//=======================
-// Flickr Actions
-//=======================
-export const flickrSuccess = (photos) => {
-  return {
-    type: types.FLICKR_SUCCESS,
-    payload: photos
-  };
-};
-
-export const flickrFailure = () => {
-  return {
-    type: types.FLICKR_FAILURE
-  };
-};
-
-export const fetchFlickr = () => {
-  return (dispatch) => {
-    return helper.getHelper('/results/flickr')
-    .then((response) => {
-      dispatch(flickrSuccess(response));
-    })
-    .catch((err) => {
-      console.error(err);
-      dispatch(flickrFailure());
-    });
-  };
-};
-
-
-//=======================
-// Reddit Actions
-//=======================
-export const redditSuccess = (data) => {
-  return {
-    type: types.REDDIT_SUCCESS,
-    payload: data
-  };
-};
-
-export const redditFailure = () => {
-  return {
-    type: types.REDDIT_FAILURE
-  };
-};
-
-export const fetchReddit = () => {
-  return (dispatch) => {
-    return helper.getHelper('/results/reddit')
-    .then((response) => {
-      dispatch(redditSuccess(response))
-    })
-    .catch((err) => {
-      console.error(err);
-      dispatch(redditFailure())
-    });
-  };
-};
-
-//=======================
-// NYTimes Actions
-//=======================
-export const nyTimesSuccess = (articleData) => {
-  return {
-    type: types.NYTIMES_SUCCESS,
-    payload: articleData
-  };
-};
-
-export const nyTimesFailure = () => {
-  return {
-    type: types.NYTIMES_FAILURE
-  };
-};
-
-export const fetchNYTimes = () => {
-  return (dispatch) => {
-    return helper.getHelper('/results/nytimes')
-    .then((response) => {
-      dispatch(nyTimesSuccess(response));
-    })
-    .catch((err) => {
-      console.error(err);
-      dispatch(nyTimesFailure());
-    });
-  };
-};
-
-//=======================
-// Event Registry Actions
-//=======================
-export const eventsSuccess = (data) => {
-  return {
-    type: types.EVENTS_SUCCESS,
-    payload: data
-  };
-};
-
-export const fetchEventRegistry = () => {
-  return (dispatch) => {
-    jsonp('http://eventregistry.org/json/overview?action=getRecentActivity&content_type=1', (err, data) => {
-      if (err) {
-        console.error(err);
-      } else {
-        dispatch(eventsSuccess(data));
-      }
-    });
-  };
-};
-
-//=======================
-// YouTube Actions
-//=======================
-export const youtubeSuccess = (data) => {
-  return {
-    type: types.YOUTUBE_SUCCESS,
-    payload: data
-  };
-};
-
-export const fetchYoutube = () => {
-  return (dispatch) => {
-    return helper.getHelper('/results/youtube')
-    .then((response) => {
-      dispatch(youtubeSuccess(response));
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-  };
-};
-
-//=======================
+//=================================
 // Globe Actions
-//=======================
+//=================================
 export const globeInstantiated = (earth) => {
   return {
     type: types.GLOBE_INSTANTIATED,
@@ -271,9 +140,146 @@ export const pingGlobe = (globe, lat, lng) => {
   };
 }
 
-//=======================
-// Yelp
-//=======================
+
+//=================================
+// Flickr Actions
+//=================================
+export const flickrSuccess = (photos) => {
+  return {
+    type: types.FLICKR_SUCCESS,
+    payload: photos
+  };
+};
+
+export const flickrFailure = () => {
+  return {
+    type: types.FLICKR_FAILURE
+  };
+};
+
+export const fetchFlickr = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/flickr')
+    .then((response) => {
+      dispatch(flickrSuccess(response));
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch(flickrFailure());
+    });
+  };
+};
+
+
+//=================================
+// Reddit Actions
+//=================================
+export const redditSuccess = (data) => {
+  return {
+    type: types.REDDIT_SUCCESS,
+    payload: data
+  };
+};
+
+export const redditFailure = () => {
+  return {
+    type: types.REDDIT_FAILURE
+  };
+};
+
+export const fetchReddit = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/reddit')
+    .then((response) => {
+      dispatch(redditSuccess(response))
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch(redditFailure())
+    });
+  };
+};
+
+
+//=================================
+// NYTimes Actions
+//=================================
+export const nyTimesSuccess = (articleData) => {
+  return {
+    type: types.NYTIMES_SUCCESS,
+    payload: articleData
+  };
+};
+
+export const nyTimesFailure = () => {
+  return {
+    type: types.NYTIMES_FAILURE
+  };
+};
+
+export const fetchNYTimes = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/nytimes')
+    .then((response) => {
+      dispatch(nyTimesSuccess(response));
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch(nyTimesFailure());
+    });
+  };
+};
+
+
+//=================================
+// Event Registry Actions
+//=================================
+export const eventsSuccess = (data) => {
+  return {
+    type: types.EVENTS_SUCCESS,
+    payload: data
+  };
+};
+
+export const fetchEventRegistry = () => {
+  return (dispatch) => {
+    jsonp('http://eventregistry.org/json/overview?action=getRecentActivity&content_type=1', (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        dispatch(eventsSuccess(data));
+      }
+    });
+  };
+};
+
+
+//=================================
+// YouTube Actions
+//=================================
+export const youtubeSuccess = (data) => {
+  return {
+    type: types.YOUTUBE_SUCCESS,
+    payload: data
+  };
+};
+
+export const fetchYoutube = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/youtube')
+    .then((response) => {
+      dispatch(youtubeSuccess(response));
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  };
+};
+
+
+//=================================
+// Yelp Actions
+//=================================
 export const YelpSuccess = (data) => {
   return {
     type: types.YELP_SUCCESS,
@@ -308,4 +314,35 @@ export const fetchYelp = () => {
           });
         }, 5000);
       };
+};
+
+
+//=================================
+// US Geological Survey Actions
+//=================================
+export const usGeoSuccess = (data) => {
+  return {
+    type: types.USGEO_SUCCESS,
+    payload: data
+  };
+};
+
+export const usGeoFailure = (err) => {
+  return {
+    type: types.USGEO_FAILURE,
+    err: err
+  };
+};
+
+export const fetchUSGeoSurvey = () => {
+  return (dispatch) => {
+    return helper.getHelper('/results/usgeo')
+    .then((response) => {
+      dispatch(usGeoSuccess(response.data));
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch(usGeoFailure(err))
+    });
+  };
 };
