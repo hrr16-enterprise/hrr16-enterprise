@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Promise = require('bluebird');
 const helper = require('../../services/helper.js');
-const private = require('../../private/private.js');
+const hidden = require('../../private/private.js');
 
 //=======================
 // Flicker Request Handlers
 //=======================
 router.get('/flickr', (req, res) => {
-  const flickrUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + private.FLICKR_KEY + '&safe_search=1&content_type=1&has_geo=1&extras=geo&per_page=10&format=json&nojsoncallback=1';
+  const flickrUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + hidden.FLICKR_KEY + '&safe_search=1&content_type=1&has_geo=1&extras=geo&per_page=10&format=json&nojsoncallback=1';
   return helper.getHelper(flickrUrl)
   .then((response) => {
     res.send(response.data);
@@ -41,7 +41,7 @@ router.get('/nytimes', (req, res) => {
   // location randomizer for NY Times api call
   const nyTimesLocations = ["Europe", "United States", "Australia", "South America", "Russia", "China", "Japan", "Middle East", "Africa", "Central America", "India", "Mexico", "Venezuela", "Spain", "France", "Vietnam", "Thailand", "South Africa", "Kenya"];
   const randomNYTimesLocation = nyTimesLocations[Math.floor(Math.random() * nyTimesLocations.length)];
-  const nyTimesUrl = 'http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_geo/' + randomNYTimesLocation  + '?fields=all&api-key=' + private.NYTIMES_KEY;
+  const nyTimesUrl = 'http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_geo/' + randomNYTimesLocation  + '?fields=all&api-key=' + hidden.NYTIMES_KEY;
   
   return helper.getHelper(nyTimesUrl)
   .then((response) => {
@@ -85,12 +85,12 @@ router.get('/youtube', (req, res) => {
     '-33.875832%2C151.209448' //Sydney, Australia
   ]
   const randomCity = cities[Math.floor(Math.random() * cities.length)];
-  const youtubeDataUrl = 'https://www.googleapis.com/youtube/v3/search?part=id&location=' + randomCity + '&locationRadius=1000km&maxResults=1&order=date&safeSearch=moderate&type=video&videoEmbeddable=true&key=' + private.YOUTUBE_KEY;
+  const youtubeDataUrl = 'https://www.googleapis.com/youtube/v3/search?part=id&location=' + randomCity + '&locationRadius=1000km&maxResults=1&order=date&safeSearch=moderate&type=video&videoEmbeddable=true&key=' + hidden.YOUTUBE_KEY;
   
   return helper.getHelper(youtubeDataUrl)
   .then((response) => {
     const vidId = response.data.items[0].id.videoId;
-    const youtubeVidUrl = 'https://www.googleapis.com/youtube/v3/videos?part=recordingDetails&id=' + vidId + '&maxResults=1&key=' + private.YOUTUBE_KEY;
+    const youtubeVidUrl = 'https://www.googleapis.com/youtube/v3/videos?part=recordingDetails&id=' + vidId + '&maxResults=1&key=' + hidden.YOUTUBE_KEY;
     return helper.getHelper(youtubeVidUrl)
     .then((response) => {
       res.send(response.data);
@@ -109,7 +109,7 @@ router.get('/youtube', (req, res) => {
 //=======================
 // Yelp Request Handlers
 //=======================
-const yelp = private.YELP_KEY;
+const yelp = hidden.YELP_KEY;
 const search_params = {ll:null, 
                         limit: 10,
                         deals_filter: true, 
