@@ -10,3 +10,9 @@
 	position: absolute !important;
 	z-index: -1;
 }
+
+/*temporary api response styling*/
+.result{
+  position: absolute;
+  top: 900px;
+}

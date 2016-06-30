@@ -20,7 +20,7 @@ export default class Flickr extends Component {
     }
     
     return (
-      <div className="flickr">
+      <div>
         <img src={'https://farm' + this.props.flickr.result.data.photos.photo[0].farm + '.staticflickr.com/' + this.props.flickr.result.data.photos.photo[0].server + '/' + this.props.flickr.result.data.photos.photo[0].id + '_' + this.props.flickr.result.data.photos.photo[0].secret + '_n.jpg'}/>
       </div>
     );
