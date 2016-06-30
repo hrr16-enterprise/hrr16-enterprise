@@ -24,7 +24,7 @@ export default class Yelp extends Component {
       );
     }
     return (
-      <div>Yelp stuff goes here!</div>
+      <div></div>
     );
   }
 }

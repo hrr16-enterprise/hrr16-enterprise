@@ -15,7 +15,7 @@ export default class Flickr extends Component {
   render() {    
     if (!this.props.flickr.result.data) {
       return (
-      <div className="placeholder">AWAITING FETCH INVOKE...</div>
+      <div className="placeholder"></div>
       );
     }
     

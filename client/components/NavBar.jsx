@@ -4,7 +4,6 @@ import Auth from '../containers/AuthContainer';
 
 export const NavBar = ({ children }) => (
   <div>
-    <p>Hello world!</p>
     <Auth />
   </div>
 );
