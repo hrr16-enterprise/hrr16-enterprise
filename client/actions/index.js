@@ -1,11 +1,10 @@
 import * as types from '../constants/ActionTypes';
 import helper from '../services/helper';
-import globeHelper from '../services/globe';
 import { push } from 'react-router-redux';
 import { reset } from 'redux-form';
-import planetaryjs from 'planetary.js';
 import axios from 'axios';
 import jsonp from 'jsonp';
+
 //=======================
 // UI Actions
 //=======================
@@ -209,73 +208,66 @@ export const fetchYoutube = () => {
 //=======================
 // Globe Actions
 //=======================
-export const globeInstantiated = (globe) => {
+export const globeInstantiated = (earth) => {
   return {
     type: types.GLOBE_INSTANTIATED,
-    payload: globe
+    payload: earth
   };
 };
 
 export const instantiateGlobe = () => {
-  const globe = planetaryjs.planet();
+  const body = document.getElementsByTagName('body');
 
-  globe.loadPlugin(globeHelper.autorotate(10));
+  const earth = new WE.map('earth_div', {
+    sky: true,
+    atmosphere : true
+  });
 
-  globe.loadPlugin(planetaryjs.plugins.earth({
-    topojson: { file: 'https://raw.githubusercontent.com/darul75/ng-planetaryjs/master/public/world-110m-withlakes.json' },
-    oceans: { fill: '#4BBCC8' },
-    land: { fill: '#50bc5d', stroke: '#46a551' },
-    borders: { stroke: '#46a551' }
-  }));
+  earth.setZoom(1.8);
 
-  globe.loadPlugin(globeHelper.lakes({
-    fill: '#4BBCC8',
-    stroke: '#46a551'
-  }));
+  document.getElementById('earth_div').onclick = function() {
+    clearInterval(rotation);
+  }
+  
+  WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(earth);
 
-  globe.loadPlugin(planetaryjs.plugins.pings());
-
-  globe.loadPlugin(planetaryjs.plugins.zoom({
-    scaleExtent: [100, 300]
-  }));
-
-  globe.loadPlugin(planetaryjs.plugins.drag({
-    onDragStart: () => {
-      globe.plugins.autorotate.pause();
-    },
-    onDragEnd: () => {
-      globe.plugins.autorotate.resume();
+  let rotation = setInterval(() => {
+    const c = earth.getPosition();
+    if(c[0] && c[1]) {
+      earth.setCenter([c[0], c[1] + 0.1]);
     }
-  }));
-
-  globe.projection.scale(175).translate([175, 175]).rotate([0, -10, 0]);
-
-  const canvas = document.getElementById('basicGlobe');
-  canvas.width = 800;
-  canvas.height = 800;
-
-  const context = canvas.getContext('2d');
-  context.scale(2, 2);
-
-  globe.draw(canvas);
+  }, 30);
 
   return (dispatch) => {
-    dispatch(globeInstantiated(globe));
+    dispatch(globeInstantiated(earth));
   };
 };
 
+const markers = [];
+
+const markerExists = (marker) => {
+  for (var i = 0; i < markers.length; i++) {
+    if (markers[i].W === marker.W && markers[i].X === marker.X) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export const pingGlobe = (globe, lat, lng) => {
   const loc = { lat, lng };
+  const marker = WE.marker([loc.lat, loc.lng]);
 
-  setInterval(() => {
-    const colors = ['red', 'yellow', 'white', 'orange', 'green', 'cyan', 'pink'];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    globe.plugins.pings.add(loc.lng, loc.lat, { color, ttl: 2000, angle: Math.random() * 10 });
-  }, 1000);
+  if (!markerExists(marker)) {
+    marker.addTo(globe).bindPopup("Description text could go here, supports html <ul><li>example</li><li>example</li></ul>", {maxWidth: 150,maxHeight:100, closeButton: true})
+    markers.push(marker);
+  }
   
   return {
     type: types.GLOBE_PINGED,
-    payload: loc
+    payload: marker
   };
 }
 
@@ -317,4 +309,3 @@ export const fetchYelp = () => {
         }, 5000);
       };
 };
-
