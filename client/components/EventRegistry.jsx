@@ -5,21 +5,21 @@ export default class EventRegistry extends Component {
     super(props);
   }
 
-  render() {
-    if (this.props.eventRegistry.data.recentActivity){
-      const articles = this.props.eventRegistry.data.recentActivity.articles.activity;
-      // Not sure what to do with these events yet
-      // const events = this.props.eventRegistry.data.recentActivity.events.activity;
-      return (
-        <ul>
-          {articles.map((article, i) =>
-            <li key={i}><a href={article.url}>{article.title}</a></li>
-          )}
-        </ul>
-      );
+  componentWillReceiveProps() {
+    if (this.props.eventRegistry.data.recentActivity) {
+      for (var i = 0; i < this.props.eventRegistry.data.recentActivity.articles.activity.length; i++) {
+        this.props.pingGlobe("<h3>" + this.props.eventRegistry.data.recentActivity.articles.activity[i].title + "</h3><div>" +
+          this.props.eventRegistry.data.recentActivity.articles.activity[i].body + "<a target='_blank' href=" +
+          this.props.eventRegistry.data.recentActivity.articles.activity[i].url + ">Read more</a></div>", 
+          this.props.eventRegistry.globe,
+          this.props.eventRegistry.data.recentActivity.articles.activity[i].source.location.lat,
+          this.props.eventRegistry.data.recentActivity.articles.activity[i].source.location.long
+        );
+      }
     }
-    return (
-    <div></div>
-    );
+  }
+
+  render() {
+    return false;
   }
 }
