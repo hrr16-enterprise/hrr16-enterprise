@@ -6,25 +6,25 @@ export default class Yelp extends Component {
     super(props);
   }
   
-  render() {
+  componentWillReceiveProps(object) {
     if (this.props.yelp.result.data){
-      const posts = this.props.yelp.result.data;
-      return (
-        <ul>
-          {posts.map((post) =>
-            <li>
-              {post.name}
-              <p><img src = {post.image_url}/></p>
-              <p><img src = {post.rating_img_url}/></p> 
-              <p>{post.deals[0].options[0].title}</p>
-              <p>{(Math.floor(post.distance)*0.0006).toFixed(2)} mi Away</p>
-            </li>
-          )} 
-        </ul>
-      );
-    }
-    return (
-      <div></div>
-    );
+      const YelpData = this.props.yelp.result.data;
+     for(var i = 0; i < YelpData.length; i++){
+        console.log(this.props.yelp.result.data[i].rating_img_url);
+       this.props.pingGlobe("<h3>" + 
+        "<a href=" + "'" + YelpData[i].url + "'" + "target='_blank'" + ">" + YelpData[i].name + "</a>" + 
+        "<div><img src =" + YelpData[i].image_url +"></div>" + 
+        "<div><img src =" + YelpData[i].rating_img_url +"></div>" +
+        "<div>" + YelpData[i].deals[0].options[0].title + "</div>" +  
+        "" + (Math.floor(YelpData[i].distance)*0.0006).toFixed(2) + "" + " mi",
+        this.props.yelp.globe,
+        YelpData[i].location.coordinate.latitude, 
+        YelpData[i].location.coordinate.longitude)
+     }       
+    }    
+  }
+  
+  render() {
+    return false;
   }
 }

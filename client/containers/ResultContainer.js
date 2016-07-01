@@ -5,8 +5,8 @@ import ResultComponent from '../components/Result.jsx';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    pingGlobe: (globe, lat, lng) => {
-      dispatch(actions.pingGlobe(globe, lat, lng));
+    pingGlobe: (html, globe, latitude, longitude) => {
+      dispatch(actions.pingGlobe(html, globe, latitude, longitude));
     }
     // fetchButtonClickData: () => {
     //   dispatch(actions.fetchButtonClickData());

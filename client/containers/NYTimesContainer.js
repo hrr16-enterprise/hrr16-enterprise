@@ -9,8 +9,11 @@ import NYTimes from '../components/NYTimes.jsx';
 // }
 
 // ES6 syntax below:
-function mapStateToProps({ nytimes }) {
-  return { nytimes };
+function mapStateToProps(state) {
+  return { 
+      nytimes: state.nytimes,
+      globe: state.globe
+   };
 }
 
 export default connect(mapStateToProps)(NYTimes);
