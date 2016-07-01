@@ -134,12 +134,14 @@ const clearMarkers = (markers, globe) => {
   }
 };
 
-export const pingGlobe = (globe, lat, lng) => {
-  const loc = { lat, lng };
-  const marker = WE.marker([loc.lat, loc.lng]);
+export const pingGlobe = (globe, locations) => {
   clearMarkers(markers, globe);
-  marker.addTo(globe).bindPopup("Description text could go here, supports html <ul><li>example</li><li>example</li></ul>", {maxWidth: 150,maxHeight:100, closeButton: true});
-  markers.push(marker); 
+  locations.forEach((location) => {
+    const loc = { lat:location.latitude, lng: location.latitude};
+    const marker = WE.marker([loc.lat, loc.lng]);  
+    marker.addTo(globe).bindPopup("Description text could go here, supports html <ul><li>example</li><li>example</li></ul>", {maxWidth: 150,maxHeight:100, closeButton: true});
+    markers.push(marker); 
+  });
   
   return {
     type: types.GLOBE_PINGED,
