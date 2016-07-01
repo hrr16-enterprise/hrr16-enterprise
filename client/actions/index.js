@@ -123,20 +123,27 @@ const markerExists = (marker) => {
     }
   }
   return false;
-}
+};
+
+const clearMarkers = (markers, globe) => {
+  if(markers.length > 0){
+    markers.forEach((marker) => {
+      marker.removeFrom(globe);
+    markers.length = 0;
+    });
+  }
+};
 
 export const pingGlobe = (globe, lat, lng) => {
   const loc = { lat, lng };
   const marker = WE.marker([loc.lat, loc.lng]);
-
-  if (!markerExists(marker)) {
-    marker.addTo(globe).bindPopup("Description text could go here, supports html <ul><li>example</li><li>example</li></ul>", {maxWidth: 150,maxHeight:100, closeButton: true})
-    markers.push(marker);
-  }
+  clearMarkers(markers, globe);
+  marker.addTo(globe).bindPopup("Description text could go here, supports html <ul><li>example</li><li>example</li></ul>", {maxWidth: 150,maxHeight:100, closeButton: true});
+  markers.push(marker); 
   
   return {
     type: types.GLOBE_PINGED,
-    payload: marker
+    payload: markers
   };
 }
 
