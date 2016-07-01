@@ -1,4 +1,5 @@
 import React from 'react';
+import Vivus from 'vivus';
 import { Component } from 'react';
 import FlickrComponent from './Flickr.jsx';
 import RedditComponent from './Reddit.jsx';
@@ -16,6 +17,9 @@ class Result extends Component {
   // componentWillMount() {
     // this.props.fetchButtonClickData();
   // }
+  componentDidMount(){
+    new Vivus('svg', {type: 'delayed', duration: 150});
+  } 
 
   render() {
     const { result, ui, flickr, reddit, nytimes, pingGlobe, eventRegistry, youtube, yelp, usGeoSurvey } = this.props;

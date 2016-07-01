@@ -2,6 +2,24 @@
 	z-index: 0;
 }
 
+/*
+NAV BAR STYLING
+ */
+
+.appTitle{
+  font-family: 'Lobster', cursive;
+  font-size: 128px;
+  color: white;
+}
+
+.circle{
+  stroke-width: 3;
+}
+
+.pin{
+  stroke-width: 3;
+}
+
 #earth_div{
 	top: 0;
 	right: 0;
