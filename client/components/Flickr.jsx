@@ -7,8 +7,6 @@ export default class Flickr extends Component {
 
   componentWillReceiveProps(object) {
     if (this.props.flickr.result.data) {
-      console.log(this.props.flickr.result.data.photos.photo);
-      // this.props.pingGlobe(this.props.flickr.globe, this.props.flickr.result.data.photos.photo[0].latitude, this.props.flickr.result.data.photos.photo[0].longitude);
       this.props.pingGlobe(this.props.flickr.globe, this.props.flickr.result.data.photos.photo);
     }
   }
