@@ -4,26 +4,24 @@ export default class NYTimes extends Component {
   constructor(props) {
     super(props);
   }
-
-  // For future pings
-  // 
-  // componentWillReceiveProps(object) {
-  // }
-  render() {
-    if (!this.props.nytimes.result.data) {
-      return (
-      <div className="placeholder"></div>
-      );
+  
+  componentWillReceiveProps(object) {
+    if (this.props.nytimes.result.data) {
+      const NYTimesData = this.props.nytimes.result.data
+          this.props.pingGlobe("<h3>" +  
+          'NYTimes' +        
+          "</h3>" + 
+          "<a href=" + "'" + NYTimesData.results[0].article_list.results[0].url + "'" + "target='_blank'" + ">" + 
+            NYTimesData.results[0].article_list.results[0].body + 
+            "</a>",
+          this.props.nytimes.globe,
+          NYTimesData.results[0].geocodes[0].latitude,
+          NYTimesData.results[0].geocodes[0].longitude
+        );
     }
-    
-    return (
-      <div>
-        NY Times Latitude: {this.props.nytimes.result.data.results[0].geocodes[0].latitude}
-        NY Times Longitude: {this.props.nytimes.result.data.results[0].geocodes[0].longitude}
-        NY Times URL: {this.props.nytimes.result.data.results[0].article_list.results[0].url}
-        NY Times Body: {this.props.nytimes.result.data.results[0].article_list.results[0].title}
-        NY Times Title: {this.props.nytimes.result.data.results[0].article_list.results[0].body}
-      </div>
-    );
+  }
+  
+  render() {    
+    return false;
   }
 }

@@ -14,14 +14,12 @@ export default (state = {
       ...state,
       result: []
     };
+    case types.GLOBE_INSTANTIATED:
+    return {
+      ...state,
+      globe: action.payload
+    };
     default:
     return state;
   }
-  //   case types.GLOBE_INSTANTIATED:
-  //   return {
-  //     ...state,
-  //     globe: action.payload
-  //   };
-  //   default:
-  //   return state;
 }

@@ -14,7 +14,8 @@ export default class Flickr extends Component {
             this.props.flickr.result.data.photos.photo[i].id + "_" + 
             this.props.flickr.result.data.photos.photo[i].secret + "_n.jpg/>", 
           this.props.flickr.globe,
-          this.props.flickr.result.data.photos.photo[i]
+          this.props.flickr.result.data.photos.photo[i].latitude,
+          this.props.flickr.result.data.photos.photo[i].longitude
         );
       }
     }

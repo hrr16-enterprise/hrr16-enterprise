@@ -27,10 +27,10 @@ class Result extends Component {
       <div className="result">
         <FlickrComponent flickr={flickr} pingGlobe={pingGlobe} />
         <RedditComponent reddit={reddit} />
-        <NYTimesComponent nytimes={nytimes} />
+        <NYTimesComponent nytimes={nytimes} pingGlobe={pingGlobe} />
         <EventRegistryComponent eventRegistry={eventRegistry} />
         <YoutubeComponent youtube={youtube} />
-        <YelpComponent yelp={yelp} />
+        <YelpComponent yelp={yelp} pingGlobe={pingGlobe} />
         <USGeoSurveyComponent usGeoSurvey={usGeoSurvey} />
       </div>
     )
