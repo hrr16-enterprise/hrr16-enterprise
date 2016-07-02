@@ -22,6 +22,6 @@ export default class NYTimes extends Component {
   }
   
   render() {    
-      return false;
+    return false;
   }
 }
