@@ -14,7 +14,12 @@ export default (state = {
       ...state,
       result: action.err
     };
+    case types.GLOBE_INSTANTIATED:
+    return {
+      ...state,
+      globe: action.payload
+    };
     default:
     return state;
-  };
+  }
 };

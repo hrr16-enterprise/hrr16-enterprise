@@ -9,10 +9,10 @@ import Flickr from '../components/Flickr.jsx';
 // }
 
 // ES6 syntax below:
-function mapStateToProps(state) {
+function mapStateToProps({ flickr, globe }) {
   return { 
-    flickr: state.flickr,
-    globe: state.globe
+    flickr,
+    globe
   };
 }
 
