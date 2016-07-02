@@ -29,9 +29,9 @@ class Result extends Component {
         <RedditComponent reddit={reddit} />
         <NYTimesComponent nytimes={nytimes} pingGlobe={pingGlobe} />
         <EventRegistryComponent eventRegistry={eventRegistry} pingGlobe={pingGlobe} />
-        <YoutubeComponent youtube={youtube} />
         <YelpComponent yelp={yelp} pingGlobe={pingGlobe} />
-        <USGeoSurveyComponent usGeoSurvey={usGeoSurvey} />
+        <YoutubeComponent youtube={youtube} pingGlobe={pingGlobe} />
+        <USGeoSurveyComponent usGeoSurvey={usGeoSurvey} pingGlobe={pingGlobe} />
       </div>
     )
   };
