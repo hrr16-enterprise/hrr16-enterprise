@@ -7,6 +7,7 @@ export default class NYTimes extends Component {
   
   componentWillReceiveProps(object) {
     if (this.props.nytimes.result.data) {
+<<<<<<< HEAD
       const NYTimesData = this.props.nytimes.result.data
           this.props.pingGlobe("<h3>" +  
           'NYTimes' +        
@@ -18,6 +19,9 @@ export default class NYTimes extends Component {
           NYTimesData.results[0].geocodes[0].latitude,
           NYTimesData.results[0].geocodes[0].longitude
         );
+=======
+      // this.props.pingGlobe(this.props.nytimes.globe, this.props.nytimes.result.data.results[0].geocodes[0].latitude, this.props.nytimes.result.data.results[0].geocodes[0].longitude);
+>>>>>>> (fix) Fix pingGlobe calls
     }
   }
   
