@@ -136,10 +136,9 @@ const clearMarkers = (markers, globe) => {
 };
 
 export const pingGlobe = (html, globe, latitude, longitude) => {
-  // clearMarkers(markers, globe);
-    const marker = WE.marker([latitude, longitude]);  
-    marker.addTo(globe).bindPopup(html, {closeButton: true});
-    markers.push(marker);
+  const marker = WE.marker([latitude, longitude]);  
+  marker.addTo(globe).bindPopup(html, {closeButton: true});
+  markers.push(marker);
   
   return {
     type: types.GLOBE_PINGED,
@@ -250,7 +249,7 @@ export const eventsSuccess = (data) => {
 
 export const fetchEventRegistry = () => {
   return (dispatch) => {
-    jsonp('http://eventregistry.org/json/overview?action=getRecentActivity&content_type=1', (err, data) => {
+    jsonp('http://eventregistry.org/jsonCache/overview?action=getRecentActivity&maxCacheAge=1&recentActivityArticlesIncludeLocationGeoLocation=true&recentActivityArticlesIncludeSourceLocation=true&recentActivityArticlesMaxArticleCount=15&recentActivityEventsIncludeLocationGeoLocation=true&recentActivityEventsMandatoryLocation=false&recentActivityEventsMaxEventCount=15&recentActivityEventsMinAvgCosSim=0.3', (err, data) => {
       if (err) {
         console.error(err);
       } else {
