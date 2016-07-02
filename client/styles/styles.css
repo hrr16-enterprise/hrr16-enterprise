@@ -34,3 +34,9 @@ NAV BAR STYLING
   position: absolute;
   top: 900px;
 }
+
+
+/* Marker styling for components*/
+.marker-img {
+	margin-left: -10px;
+}
