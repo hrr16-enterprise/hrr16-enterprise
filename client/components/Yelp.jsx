@@ -7,8 +7,10 @@ export default class Yelp extends Component {
   }
   
   componentWillReceiveProps(object) {
-    if (this.props.yelp.result.data){
+    if (this.props.yelp.result.data) {
+      
       const YelpData = this.props.yelp.result.data;
+      
      for(let i = 0; i < YelpData.length; i++){
        this.props.pingGlobe("<h3>" + 
         "<a href=" + "'" + YelpData[i].url + "'" + "target='_blank'" + ">" + YelpData[i].name + "</a>" + 
