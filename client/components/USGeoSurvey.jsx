@@ -12,16 +12,22 @@ export default class USGeoSurvey extends Component {
       const latestQuakes = this.props.usGeoSurvey.result.features[0];
       const timestamp = moment(latestQuakes.properties.time);
       const time = timestamp.format('MMMM Do YYYY, h:mm:ss a');
-      
-      this.props.pingGlobe("<div><p><strong>Recent earthquake:</strong></p><p>Coords: " + latestQuakes.geometry.coordinates[0] + ", " + latestQuakes.geometry.coordinates[1] + "</p><p>Location: " + latestQuakes.properties.place + "</p><p>Magnitude: " + latestQuakes.properties.mag + "</p><p>Time of occurrence:" + time + "</p></div>",
+        
+      this.props.pingGlobe("<div><p><strong>" + 'Recent earthquake: ' + "</strong></p><p>" + 'Coords: ' + latestQuakes.geometry.coordinates[0] + ", " + latestQuakes.geometry.coordinates[1] + "</p><p>" + 'Location: ' + latestQuakes.properties.place + "</p><p>" + 'Magnitude: ' + latestQuakes.properties.mag + "</p><p>" + 'Time of occurrence: ' + time + "</p></div>",
         this.props.usGeoSurvey.globe,
         latestQuakes.geometry.coordinates[0],
         latestQuakes.geometry.coordinates[1]
+        
       );
+        console.log("LOOK HERE ", this.props);
     }
+    console.log('PRPAOS', this.props)
   }
   
   render() {
     return false;
   }
 }
+
+// "<div><p><strong>" + 'Recent earthquake: ' + "</strong></p><p>" + 'Coords: ' + latestQuakes.geometry.coordinates[0] + ", " + latestQuakes.geometry.coordinates[1] + "</p><p>" + 'Location: ' + latestQuakes.properties.place + "</p><p>" + 'Magnitude: ' + latestQuakes.properties.mag + "</p><p>" + 'Time of occurrence: ' + time + "</p></div>",
+

@@ -6,6 +6,7 @@ export default class NYTimes extends Component {
   }
   
   componentWillReceiveProps(object) {
+    console.log("NY TIMES PROPS, ", this.props)
     // if (this.props.nytimes.result.data) {
     //   const NYTimesData = this.props.nytimes.result.data
     //       this.props.pingGlobe("<h3>" +  
