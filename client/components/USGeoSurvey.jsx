@@ -19,15 +19,10 @@ export default class USGeoSurvey extends Component {
         latestQuakes.geometry.coordinates[1]
         
       );
-        console.log("LOOK HERE ", this.props);
     }
-    console.log('PRPAOS', this.props)
   }
   
   render() {
     return false;
   }
 }
-
-// "<div><p><strong>" + 'Recent earthquake: ' + "</strong></p><p>" + 'Coords: ' + latestQuakes.geometry.coordinates[0] + ", " + latestQuakes.geometry.coordinates[1] + "</p><p>" + 'Location: ' + latestQuakes.properties.place + "</p><p>" + 'Magnitude: ' + latestQuakes.properties.mag + "</p><p>" + 'Time of occurrence: ' + time + "</p></div>",
-
