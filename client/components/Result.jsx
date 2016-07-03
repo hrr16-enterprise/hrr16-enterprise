@@ -26,12 +26,12 @@ class Result extends Component {
     return(
       <div className="result">
         <FlickrComponent flickr={flickr} pingGlobe={pingGlobe} />
-        <RedditComponent reddit={reddit} />
         <NYTimesComponent nytimes={nytimes} pingGlobe={pingGlobe} />
         <EventRegistryComponent eventRegistry={eventRegistry} pingGlobe={pingGlobe} />
-        <YoutubeComponent youtube={youtube} />
         <YelpComponent yelp={yelp} pingGlobe={pingGlobe} />
-        <USGeoSurveyComponent usGeoSurvey={usGeoSurvey} />
+        <YoutubeComponent youtube={youtube} pingGlobe={pingGlobe} />
+        <USGeoSurveyComponent usGeoSurvey={usGeoSurvey} pingGlobe={pingGlobe} />
+        <RedditComponent reddit={reddit} />
       </div>
     )
   };

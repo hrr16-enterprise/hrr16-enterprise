@@ -135,10 +135,12 @@ const clearMarkers = (markers, globe) => {
   }
 };
 
+
 export const pingGlobe = (html, globe, latitude, longitude) => {
-  const marker = WE.marker([latitude, longitude]);  
-  marker.addTo(globe).bindPopup(html, {closeButton: true});
-  markers.push(marker);
+  // clearMarkers(markers, globe);
+    const marker = WE.marker([latitude, longitude]);  
+    marker.addTo(globe).bindPopup(html, {maxWidth: 450, maxHeight:230, closeButton: true});
+    markers.push(marker);
   
   return {
     type: types.GLOBE_PINGED,
