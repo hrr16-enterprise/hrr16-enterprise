@@ -117,9 +117,9 @@ export const instantiateGlobe = () => {
 
 const markers = [];
 
-const markerExists = (marker) => {
+const markerExists = (lat, lng) => {
   for (var i = 0; i < markers.length; i++) {
-    if (markers[i].W === marker.W && markers[i].X === marker.X) {
+    if (markers[i].lat === lat && markers[i].lng === lng) {
       return true;
     }
   }
@@ -135,19 +135,21 @@ const clearMarkers = (markers, globe) => {
   }
 };
 
-
 export const pingGlobe = (html, globe, latitude, longitude) => {
   // clearMarkers(markers, globe);
-    const marker = WE.marker([latitude, longitude]);  
+  if (!markerExists(latitude, longitude)) {
+    const marker = WE.marker([latitude, longitude]);
+    marker.lat = latitude;
+    marker.lng = longitude;
     marker.addTo(globe).bindPopup(html, {maxWidth: 450, maxHeight:230, closeButton: true});
     markers.push(marker);
-  
+    console.log(html);
+  }
   return {
     type: types.GLOBE_PINGED,
     payload: markers
   };
 }
-
 
 //=================================
 // Flickr Actions
