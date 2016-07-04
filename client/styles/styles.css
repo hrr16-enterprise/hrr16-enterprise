@@ -7,11 +7,16 @@ NAV BAR STYLING
  */
 
 .appTitle{
-  font-family: 'Lobster', cursive;
-  font-size: 128px;
-  color: white;
+  font-family: 'Lobster Two', cursive;
+  font-size: 98px;
+/*  color: #84D8A8;*/
+  color: #85E6AD;
 }
 
+
+/*
+GLOBE STYLING
+ */
 .circle{
   stroke-width: 3;
 }
@@ -27,12 +32,6 @@ NAV BAR STYLING
 	left: 0;
 	position: absolute !important;
 	z-index: -1;
-}
-
-/*temporary api response styling*/
-.result{
-  position: absolute;
-  top: 900px;
 }
 
 
