@@ -144,6 +144,7 @@ router.get('/usgeo', (req, res) => {
 });
 
 
+
 //=======================
 // User Post Handler
 //=======================
@@ -151,5 +152,6 @@ router.post('/user/data', (req, res) => {
   console.log(req.body);
   res.sendStatus(200);
 });
+
 
 module.exports = router;
