@@ -18,7 +18,7 @@ class Result extends Component {
     // this.props.fetchButtonClickData();
   // }
   componentDidMount(){
-    new Vivus('svg', {type: 'delayed', duration: 150});
+    new Vivus('svg', {type: 'delayed', duration: 100});
   } 
 
   render() {
