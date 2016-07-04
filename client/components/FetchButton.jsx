@@ -10,7 +10,7 @@ export default class FetchButton extends Component {
     if(this.props.auth.isAuthenticated){
       return (
         <div className="button">
-          <button onTouchTap={this.props.getData.bind(this)}>"The World in a minute"</button>
+          <button onTouchTap={this.props.getData.bind(this)} className="waves-effect waves-light btn">New Momento</button>
         </div>
         );
     } else {

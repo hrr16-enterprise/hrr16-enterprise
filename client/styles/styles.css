@@ -9,7 +9,6 @@ NAV BAR STYLING
 .appTitle{
   font-family: 'Lobster Two', cursive;
   font-size: 98px;
-/*  color: #84D8A8;*/
   color: #85E6AD;
 }
 
@@ -35,7 +34,155 @@ GLOBE STYLING
 }
 
 
-/* Marker styling for components*/
-.marker-img {
-	margin-left: -10px;
+/* 
+MARKER STYLING FOR ALL PINGS
+*/
+
+
+.fa-heart:hover {
+  color: #1B9888;
+}
+
+.favoriteButton {
+  border: none; 
+  background-color: transparent;
+}
+
+/*
+FLICKR STYLING
+ */
+.flickrContainer {
+  position: relative;
+}
+
+.flickrLogo {
+  width: 80px;
+  height: 50px;
+}
+
+.flickrImg {
+  width: 100%;
+  height: auto;
+}
+
+#flickrHeart {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+/*
+NY TIMES STYLING
+ */
+.nyTimesContainer {
+  position: relative;
+}
+
+.nyTimesLogo {
+  width: 100px;
+  height: 90px;
+}
+
+.nyTimesImg {
+  width: 150%;
+  height: auto;
+}
+
+#nyTimesHeart {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+/*
+EVENT REGISTRY STYLING
+ */
+.eventRegistryContainer {
+  position: relative;
+}
+
+.eventRegistryLogo {
+  width: 100px;
+  height: 60px;
+}
+
+.eventRegistryImg {
+  width: 100%;
+  height: auto;
+}
+
+#eventRegistryHeart {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+/*
+YELP STYLING
+ */
+.yelpContainer {
+  position: relative;
+}
+
+.yelpLogo {
+  width: 80px;
+  height: 50px;
+}
+
+.yelpImg {
+  width: 100%;
+  height: auto;
+}
+
+#yelpHeart {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+/*
+YOUTUBE STYLING
+ */
+.youtubeContainer {
+  position: relative;
+}
+
+.youtubeLogo {
+  width: 80px;
+  height: 50px;
+}
+
+.youtubeImg {
+  width: 100%;
+  height: auto;
+}
+
+#youtubeHeart {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+
+/*
+USGS STYLING
+ */
+.usgsContainer {
+  position: relative;
+}
+
+.usgsLogo {
+  width: 100px;
+  height: 60px;
+}
+
+.usgsImg {
+  width: 100%;
+  height: auto;
+}
+
+#usgsHeart {
+  position:absolute;
+  top:0;
+  right:0;
 }

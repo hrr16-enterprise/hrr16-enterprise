@@ -10,15 +10,15 @@ export default class NYTimes extends Component {
       
       const NYTimesData = this.props.nytimes.result.data
       
-        this.props.pingGlobe("<h3>" +  
-        'NYTimes' +        
-        "</h3>" + 
-        "<a href=" + "'" + NYTimesData.results[0].article_list.results[0].url + "'" + "target='_blank'" + ">" + 
+        this.props.pingGlobe("<div class='card' class='nyTimesContainer'><div class='nyTimesLogo'><img class='nyTimesImg' src='https://upload.wikimedia.org/wikipedia/commons/7/77/The_New_York_Times_logo.png'><i class='fa fa-heart fa-2x' id='nyTimesHeart' aria-hidden='true'></i></div>" +  
+          "<a href=" + "'" + NYTimesData.results[0].article_list.results[0].url + "'" + "target='_blank'" + ">" + 
           NYTimesData.results[0].article_list.results[0].body + 
-          "</a>",
+          "</a></div>",
         this.props.nytimes.globe,
         NYTimesData.results[0].geocodes[0].latitude,
-        NYTimesData.results[0].geocodes[0].longitude
+        NYTimesData.results[0].geocodes[0].longitude,
+        200,
+        200
       );
     }
   }

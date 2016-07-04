@@ -7,7 +7,7 @@ export default class Auth extends Component {
     if (!this.props.auth.isAuthenticated) {
       return (
         <div>
-          <button onTouchTap={this.props.onLoginClick} className="btn btn-primary">
+          <button onTouchTap={this.props.onLoginClick} className="waves-effect waves-light btn">
             Login
           </button>
         </div>
@@ -15,7 +15,7 @@ export default class Auth extends Component {
     } else {
       return (
         <div>
-          <button onTouchTap={this.props.onLogOutClick} className="btn btn-primary">
+          <button onTouchTap={this.props.onLogOutClick} className="waves-effect waves-light btn">
             Logout
           </button>
         </div>
