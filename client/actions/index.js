@@ -95,6 +95,10 @@ export const instantiateGlobe = () => {
 
   earth.setZoom(1.8);
 
+  earth.on('click', function() {
+    closeMarkers();
+  })
+
   document.getElementById('earth_div').onclick = function() {
     clearInterval(rotation);
   }
@@ -135,6 +139,12 @@ const clearMarkers = (markers, globe) => {
   }
 };
 
+const closeMarkers = () => {
+  markers.forEach(function(marker) {
+    marker.closePopup();
+  });
+}
+
 export const pingGlobe = (html, globe, latitude, longitude) => {
   // clearMarkers(markers, globe);
   if (!markerExists(latitude, longitude)) {
@@ -143,7 +153,6 @@ export const pingGlobe = (html, globe, latitude, longitude) => {
     marker.lng = longitude;
     marker.addTo(globe).bindPopup(html, {maxWidth: 450, maxHeight:230, closeButton: true});
     markers.push(marker);
-    console.log(html);
   }
   return {
     type: types.GLOBE_PINGED,
