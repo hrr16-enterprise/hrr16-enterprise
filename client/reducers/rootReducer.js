@@ -14,6 +14,7 @@ import youtube from './youtubeReducer.js';
 import yelp from './yelpReducer';
 import usGeoSurvey from './usGeoSurveyReducer.js';
 import sidebar from './sidebarReducer.js';
+import about from './aboutReducer.js';
 
 /**
  *  Root Reducer that combines every Reducers
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   yelp,
   usGeoSurvey,
   sidebar,
+  about,
   routing
 });
 

@@ -4,6 +4,7 @@ import FetchButton from '../containers/FetchButtonContainer';
 import ResultContainer from '../containers/ResultContainer';
 import Sidebar from '../containers/SidebarContainer';
 import Globe from '../containers/GlobeContainer';
+import About from '../containers/AboutContainer';
 
 export const CoreLayout = ({ children }) => (
   <div>
@@ -12,6 +13,7 @@ export const CoreLayout = ({ children }) => (
     <Sidebar />
     <Globe />
     <ResultContainer />
+    <About />
   </div>
 );
 
