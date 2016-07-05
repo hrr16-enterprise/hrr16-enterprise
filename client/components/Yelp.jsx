@@ -19,8 +19,8 @@ export default class Yelp extends Component {
           "<form action = '/results/user/data' method = 'post' target='hiddenFrame'>" +
           "<input name = 'image' type='hidden' value=" + YelpData[i].image_url + ">" + 
           "<button class='favoriteButton' name='url' value="+ YelpData[i].url +">" + 
-          "<i class='fa fa-heart fa-2x' id='yelpHeart' aria-hidden='true'>" +
-          "</form>" + "</button>" + "</i></div>" + 
+          "<i class='fa fa-heart fa-2x' id='yelpHeart' aria-hidden='true'>" + 
+          "</i></button></form></div>" + 
 
           "<a href=" + "'" + YelpData[i].url + "'" + "target='_blank'" + ">" + YelpData[i].name + "</a>" + 
           "<div><img src =" + YelpData[i].image_url +"></div>" + 
@@ -30,7 +30,7 @@ export default class Yelp extends Component {
           "" + (Math.floor(YelpData[i].distance)*0.0006).toFixed(2) + "" + " mi away</div>",
           this.props.yelp.globe,
           YelpData[i].location.coordinate.latitude, 
-          YelpData[i].location.coordinate.longitude,
+          YelpData[i].location.coordinate.longitude
         );
       }       
     }    
