@@ -17,7 +17,8 @@ export default class Yelp extends Component {
           "<img class='yelpImg' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Yelp_Logo.svg/1024px-Yelp_Logo.svg.png'>" + 
           "<iframe name='hiddenFrame' width='0' height='0' border='0' style='display: none;'></iframe>" +
           "<form action = '/results/user/data' method = 'post' target='hiddenFrame'>" +
-          "<input name = 'image' type='hidden' value=" + YelpData[i].image_url + ">" + 
+          "<input name = 'userID' type='hidden' value=" + JSON.parse(localStorage.getItem('profile')).clientID + ">" +
+          "<input name = 'imageUrl' type='hidden' value=" + YelpData[i].image_url + ">" + 
           "<button class='favoriteButton' name='url' value="+ YelpData[i].url +">" + 
           "<i class='fa fa-heart fa-2x' id='yelpHeart' aria-hidden='true'>" + 
           "</i></button></form></div>" + 
