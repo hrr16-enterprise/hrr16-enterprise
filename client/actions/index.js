@@ -145,13 +145,14 @@ const closeMarkers = () => {
   });
 }
 
-export const pingGlobe = (html, globe, latitude, longitude) => {
+
+export const pingGlobe = (html, globe, latitude, longitude, width, height) => {
   // clearMarkers(markers, globe);
   if (!markerExists(latitude, longitude)) {
     const marker = WE.marker([latitude, longitude]);
     marker.lat = latitude;
     marker.lng = longitude;
-    marker.addTo(globe).bindPopup(html, {maxWidth: 450, maxHeight:230, closeButton: true});
+    marker.addTo(globe).bindPopup(html, {maxWidth: width, maxHeight: height, closeButton: true});
     markers.push(marker);
   }
   return {
