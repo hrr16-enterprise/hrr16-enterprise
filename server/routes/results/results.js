@@ -132,6 +132,7 @@ router.post('/yelp', (req, res) => {
 // US Geological Survey Request Handlers
 //=========================================
 router.get('/usgeo', (req, res) => {
+  console.log('Console log usgeo');
   const usGeoUrl = 'http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time'
   return helper.getHelper(usGeoUrl)
   .then((response) => {
@@ -140,6 +141,15 @@ router.get('/usgeo', (req, res) => {
   .catch((err) => {
     res.send(err);
   });
+});
+
+
+//=======================
+// User Post Handler
+//=======================
+router.post('/user/data', (req, res) => {
+  console.log(req.body);
+  res.sendStatus(200);
 });
 
 module.exports = router;
