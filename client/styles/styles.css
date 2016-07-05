@@ -37,7 +37,10 @@ GLOBE STYLING
 /* 
 MARKER STYLING FOR ALL PINGS
 */
-
+button:focus {
+  outline: none;
+  background-color: transparent;
+}
 
 .fa-heart:hover {
   color: #1B9888;
