@@ -12,6 +12,153 @@ NAV BAR STYLING
   color: #85E6AD;
 }
 
+/* SIDE BAR STYLING */
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;
+}
+
+.favorited-items {
+  margin-left: 20px;
+  color: #fff;
+}
+
+.burger-container {
+  float: left;
+}
+
+.hamburger {
+  color: #fff;
+  background: transparent;
+  margin: 20px;
+  position: relative;
+  height: 30px;
+  width: 50px;
+}
+
+.hamburger:before {
+    background: #fff;
+    backface-visibility: hidden;
+    content: "";
+    height: 2px;
+    left: 0;
+    transition: 0.75s;
+    width: 50px;
+}
+
+.hamburger:after {
+    background: #fff;
+    backface-visibility: hidden;
+    content: "";
+    height: 2px;
+    left: 0;
+    transition: 0.75s;
+    width: 50px;
+}
+
+.hamburger:before {
+    box-shadow: #fff 0 14px 0 0;
+    position: absolute;
+    top: 0;
+}
+
+.hamburger:after {
+    position: absolute;
+    top: calc(100% - 2px);
+}
+
+.close:before {
+  animation: beforeOpenAnimate 1s forwards;
+}
+
+.close:after {
+  animation: afterOpenAnimate 1s forwards;
+}
+
+.open:before {
+  animation: beforeCloseSidebar 1s forwards;
+}
+
+.open:after {
+  animation: afterCloseSidebar 1s forwards;
+}
+
+.sidebar-open {
+  animation: sidebarOpen 1s forwards;
+}
+
+.sidebar-close {
+  animation: sidebarClose 1s forwards; 
+}
+
+@keyframes sidebarOpen {
+  to {
+    width: 300px;
+    background-color: rgba(133, 230, 173, 0.8);
+  }
+}
+
+@keyframes sidebarClose {
+  from {
+    width: 300px;
+    background-color: rgba(133, 230, 173, 0.8);
+  }
+  to {
+    width: auto;
+    background-color: transparent;
+  }
+}
+
+@keyframes beforeCloseSidebar {
+  to {
+    box-shadow: transparent 0 0 0 0;
+    top: 50%;
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes afterCloseSidebar {
+  to {
+    top: 50%;
+    transform: rotate(315deg);
+  }
+}
+
+@keyframes beforeOpenAnimate {
+  from {
+    transform: rotate(225deg);
+  }
+  to {
+    box-shadow: #fff 0 14px 0 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes afterOpenAnimate {
+  from {
+    transform: rotate(315deg);
+  }
+  to {
+    top: calc(100% - 2px);
+    transform: rotate(0deg);
+  }
+}
+
+/*.hamburger:active:before {
+  box-shadow: transparent 0 0 0 0;
+  top: 50%;
+  transform: rotate(225deg);
+}
+
+.hamburger:active:after {
+  top: 50%;
+  transform: rotate(315deg);
+}*/
 
 /*
 GLOBE STYLING
@@ -32,6 +179,17 @@ GLOBE STYLING
 	position: absolute !important;
 	z-index: -1;
 }
+
+/*.we-pm-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background-image: none !important;
+  margin: -35px 0 0 -15px !important;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.3);
+}*/
 
 
 /* 
