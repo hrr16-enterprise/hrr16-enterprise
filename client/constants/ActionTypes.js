@@ -42,3 +42,6 @@ export const YELP_FAILURE = 'YELP_FAILURE';
 // US Geological Survey Actions
 export const USGEO_SUCCESS = 'USGEO_SUCCESS';
 export const USGEO_FAILURE = 'USGEO_FAILURE';
+
+// Fetch User Favorites 
+export const DATA_SUCCESS = 'DATA_SUCCESS';

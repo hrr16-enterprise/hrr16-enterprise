@@ -16,6 +16,4 @@ const dBLookUp = (userID,callback) => {
 module.exports = {
   dbSubmit,
   dBLookUp
-<<<<<<< HEAD
-
 };
