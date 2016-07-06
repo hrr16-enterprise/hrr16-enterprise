@@ -20,7 +20,7 @@ export default (state = {
     case DATA_SUCCESS:
       return Object.assign({}, state, {
         ...state,
-        data: payload.data
+        data: action.payload
       })
     default:
       return state;

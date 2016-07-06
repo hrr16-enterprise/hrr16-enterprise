@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     auth: state.auth,
-    ui: state.ui
+    ui: state.ui,
+    data: state.data
   };
 };
 

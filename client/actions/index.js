@@ -44,24 +44,25 @@ export const hideSidebar = () => {
 // Auth Actions
 //=================================
 export const lockSuccess = (profile, token) => {
-  const requestPath = '/results/user/data' + JSON.parse(localStorage.getItem('profile')).clientID;
-  
-  helper.getHelper(requestPath)
-    .then((response) => {
-      dispatch(DataSuccess(response));
-    });
-  
   return {
     type: types.LOCK_SUCCESS,
     profile,
     token
   };
 };
+  
+export const GetUserData = (callback) => {
+  const requestPath = '/results/user/data' + JSON.parse(localStorage.getItem('profile')).clientID;
+    helper.getHelper(requestPath)
+    .then((response) => {
+      callback(response);
+    })
+}; 
 
-export const DataSuccess = (data) => {
+export const DataSuccess = (load) => {
   return {
     type: types.DATA_SUCCESS,
-    payload: data 
+    payload: load 
   };
 };
 
@@ -84,6 +85,9 @@ export const login = () => {
         localStorage.setItem('profile', JSON.stringify(profile));
         localStorage.setItem('id_token', token);
         dispatch(lockSuccess(profile, token));
+        GetUserData((data) => {
+          dispatch(DataSuccess(data));
+        });
       }
     });
   };
