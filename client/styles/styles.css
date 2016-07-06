@@ -200,6 +200,17 @@ button:focus {
   background-color: transparent;
 }
 
+.we-pm-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background-image: none !important;
+  margin: -35px 0 0 -15px !important;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.3);
+}
+
 .fa-heart:hover {
   color: #1B9888;
 }
