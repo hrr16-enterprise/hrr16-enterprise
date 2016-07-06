@@ -60,7 +60,6 @@ export const GetUserData = (callback) => {
 }; 
 
 export const DataSuccess = (load) => {
-  console.log(load);
   return {
     type: types.DATA_SUCCESS,
     payload: load 
