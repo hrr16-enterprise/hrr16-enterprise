@@ -30,12 +30,27 @@ export const popupOpen = (content, keyword = 'general') => {
 // Auth Actions
 //=================================
 export const lockSuccess = (profile, token) => {
+  const requestPath = '/results/user/data' + JSON.parse(localStorage.getItem('profile')).clientID;
+  
+  helper.getHelper(requestPath)
+    .then((response) => {
+      dispatch(DataSuccess(response));
+    });
+  
   return {
     type: types.LOCK_SUCCESS,
     profile,
     token
   };
 };
+
+export const DataSuccess = (data) => {
+  return {
+    type: types.DATA_SUCCESS,
+    payload: data 
+  };
+};
+
 
 export const lockFailure = (err) => {
   return {

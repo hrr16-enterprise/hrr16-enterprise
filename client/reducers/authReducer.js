@@ -1,7 +1,8 @@
-import { LOCK_SUCCESS, LOGOUT_SUCCESS } from '../constants/ActionTypes';
+import { LOCK_SUCCESS, LOGOUT_SUCCESS, DATA_SUCCESS } from '../constants/ActionTypes';
 
 export default (state = {
-    isAuthenticated: localStorage.getItem('id_token') ? true : false
+    isAuthenticated: localStorage.getItem('id_token') ? true : false,
+    data : null
   }, action) => {
   switch (action.type) {
     case LOCK_SUCCESS:
@@ -15,6 +16,11 @@ export default (state = {
         ...state,
         isAuthenticated: false,
         errorMessage: ''
+      })
+    case DATA_SUCCESS:
+      return Object.assign({}, state, {
+        ...state,
+        data: payload.data
       })
     default:
       return state;

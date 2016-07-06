@@ -147,7 +147,7 @@ router.get('/usgeo', (req, res) => {
 
 
 //=======================
-// User Post Handler
+// User Data Handler
 //=======================
 router.post('/user/data', (req, res) => {
   dbhandler.dbSubmit(req.body, function(response){
@@ -157,8 +157,9 @@ router.post('/user/data', (req, res) => {
 });
 
 
-router.get('/user/data', (req, res) => {
-  dbhandler.dBLookUp('123', function(data){
+router.get('/user/data*', (req, res) => {
+  const user = req.params[0].replace(/\//g, "");
+  dbhandler.dBLookUp(user, function(data){
     res.send(data);
   });
 });
