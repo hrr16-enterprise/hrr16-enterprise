@@ -13,6 +13,7 @@ import eventRegistry from './eventRegistryReducer';
 import youtube from './youtubeReducer.js';
 import yelp from './yelpReducer';
 import usGeoSurvey from './usGeoSurveyReducer.js';
+import sidebar from './sidebarReducer.js';
 
 /**
  *  Root Reducer that combines every Reducers
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
   youtube,
   yelp,
   usGeoSurvey,
+  sidebar,
   routing
 });
 

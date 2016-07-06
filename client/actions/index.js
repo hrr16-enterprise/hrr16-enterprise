@@ -25,6 +25,20 @@ export const popupOpen = (content, keyword = 'general') => {
   };
 };
 
+export const showSidebar = () => {
+  return {
+    type: types.SIDEBAR_OPEN,
+    payload: true
+  };
+};
+
+export const hideSidebar = () => {
+  return {
+    type: types.SIDEBAR_CLOSE,
+    payload: false
+  };
+};
+
 
 //=================================
 // Auth Actions
