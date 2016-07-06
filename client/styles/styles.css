@@ -149,17 +149,6 @@ NAV BAR STYLING
   }
 }
 
-/*.hamburger:active:before {
-  box-shadow: transparent 0 0 0 0;
-  top: 50%;
-  transform: rotate(225deg);
-}
-
-.hamburger:active:after {
-  top: 50%;
-  transform: rotate(315deg);
-}*/
-
 /*
 GLOBE STYLING
  */
@@ -179,18 +168,6 @@ GLOBE STYLING
 	position: absolute !important;
 	z-index: -1;
 }
-
-/*.we-pm-icon {
-  width: 30px !important;
-  height: 30px !important;
-  background-image: none !important;
-  margin: -35px 0 0 -15px !important;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  box-shadow: -1px 1px 1px rgba(0,0,0,0.3);
-}*/
-
 
 /* 
 MARKER STYLING FOR ALL PINGS
@@ -218,6 +195,18 @@ button:focus {
 .favoriteButton {
   border: none; 
   background-color: transparent;
+}
+
+.we-pp-wrapper {
+  background: #b7f0cf;
+}
+
+.we-pp-tip {
+  background: #b7f0cf; 
+}
+
+.we-pp-close {
+  background: url('https://s32.postimg.org/8159hxrxh/asdasd21.png');
 }
 
 /*
@@ -274,8 +263,8 @@ EVENT REGISTRY STYLING
 }
 
 .eventRegistryLogo {
-  width: 100px;
-  height: 60px;
+  width: 125px;
+  height: 35px;
 }
 
 .eventRegistryImg {
@@ -284,9 +273,15 @@ EVENT REGISTRY STYLING
 }
 
 #eventRegistryHeart {
-  position:absolute;
-  top:0;
-  right:0;
+  float: right;
+  color: #E7576F;
+  font-size: 1.5em;
+  margin-right: -15px;
+  margin-bottom: -10px;
+}
+
+#eventRegistryHeart:hover {
+  color: #fff;
 }
 
 /*
