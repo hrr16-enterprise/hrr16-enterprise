@@ -4,6 +4,8 @@ const path = require('path');
 const morgan = require('morgan');
 const results = require('./routes/results/results.js');
 
+const knex = require('./db/db.js');
+
 const app = express();
 
 //Static Files - possible need to serve the 'build' folder
