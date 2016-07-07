@@ -12,8 +12,10 @@ NAV BAR STYLING
   color: #85E6AD;
 }
 
-/* SIDE BAR STYLING */
 
+/* 
+SIDE BAR STYLING
+ */
 .sidebar {
   position: absolute;
   top: 0;
@@ -147,6 +149,142 @@ NAV BAR STYLING
     top: calc(100% - 2px);
     transform: rotate(0deg);
   }
+}
+
+/*
+ABOUT THE TEAM STYLING
+ */
+.about {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.fa-rocket {
+  color: white;
+  float: right;
+  margin: 20px;
+}
+
+.close:before {
+  animation: beforeOpenAnimate 1s forwards;
+}
+
+.close:after {
+  animation: afterOpenAnimate 1s forwards;
+}
+
+.open:before {
+  animation: beforeCloseSidebar 1s forwards;
+}
+
+.open:after {
+  animation: afterCloseSidebar 1s forwards;
+}
+
+.about-open {
+  animation: aboutOpen 1s forwards;
+}
+
+.about-close {
+  animation: aboutClose 1s forwards; 
+}
+
+@keyframes aboutOpen {
+  to {
+    height: 637px;
+    background-color: rgba(133, 230, 173, 0.8);
+  }
+}
+
+@keyframes aboutClose {
+  from {
+    height: 637px;
+    background-color: rgba(133, 230, 173, 0.8);
+  }
+  to {
+    height: auto;
+    background-color: transparent;
+  }
+}
+
+@keyframes beforeCloseAbout {
+  to {
+    box-shadow: transparent 0 0 0 0;
+    top: 50%;
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes afterCloseAbout {
+  to {
+    top: 50%;
+    transform: rotate(315deg);
+  }
+}
+
+@keyframes beforeOpenAnimate {
+  from {
+    transform: rotate(225deg);
+  }
+  to {
+    box-shadow: #fff 0 14px 0 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes afterOpenAnimate {
+  from {
+    transform: rotate(315deg);
+  }
+  to {
+    top: calc(100% - 2px);
+    transform: rotate(0deg);
+  }
+}
+
+.profileContainer {
+  font-family: 'Lobster Two', cursive;
+  font-size: 58px;
+  text-align: center;
+  margin-left: 72px;
+  color: white;
+}
+
+.td-img {
+  padding: 0px 0px !important;
+}
+
+.profile-img {
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+.profile-role {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.fa-github-square {
+  color: white;
+  margin-right: 10px;
+}
+
+.fa-linkedin-square {
+  color: white;
 }
 
 /*

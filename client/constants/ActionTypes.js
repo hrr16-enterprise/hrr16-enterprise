@@ -49,3 +49,7 @@ export const DATA_SUCCESS = 'DATA_SUCCESS';
 // Sidebar Actions
 export const SIDEBAR_OPEN = 'SIDEBAR_OPEN';
 export const SIDEBAR_CLOSE = 'SIDEBAR_CLOSE';
+
+// About Actions
+export const ABOUT_OPEN = 'ABOUT_OPEN';
+export const ABOUT_CLOSE = 'ABOUT_CLOSE';
