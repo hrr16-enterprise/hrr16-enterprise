@@ -5,52 +5,25 @@ export default class Sidebar extends Component {
     // this.props.showSidebar();
   }
 
-  render () {		
+  render () {	
+  		console.log(this.props.auth);
 		return (
+
 	    <div className={this.props.sidebar.visible ? 'sidebar-open sidebar' : 'sidebar-close sidebar'}>
 	    	<div className={ this.props.ui.animation ? "burger-container" : "burger-container-hidden"}>
 	    		<div onTouchTap={this.props.sidebar.visible ? this.props.hideSidebar : this.props.showSidebar} className={this.props.sidebar.visible ? 'open hamburger' : 'close hamburger'}>
 	    	</div>
-	    		{this.props.sidebar.visible &&
-				    <div className="favorited-items">
-	    				<span>Articles</span>
-	    				<ul>
-	    					<li>......</li>
-	    					<li>......</li>
-	    					<li>......</li>
-	    				</ul>
-	    				<span>Events</span>
-	    				<ul>
-	    					<li>......</li>
-	    					<li>......</li>
-	    					<li>......</li>
-	    				</ul>
-	    				<span>Flickr</span>
-	    				<ul>
-	    					<li>......</li>
-	    					<li>......</li>
-	    					<li>......</li>
-	    				</ul>
-	    				<span>Youtube</span>
-	    				<ul>
-	    					<li>......</li>
-	    					<li>......</li>
-	    					<li>......</li>
-	    				</ul>
-	    				<span>Yelp</span>
-	    				<ul>
-	    					<li>......</li>
-	    					<li>......</li>
-	    					<li>......</li>
-	    				</ul>
-	    				<span>EarthQuakes</span>
-	    				<ul>
-	    					<li>......</li>
-	    					<li>......</li>
-	    					<li>......</li>
-	    				</ul>
-	    			</div>
-				  }
+	    		{this.props.sidebar.visible && this.props.auth.data &&
+            <div className="favorited-items">
+              <ul>
+                 {this.props.auth.data.data.map((data) =>
+                   <li>
+                      <a href = {data.favorite_url} target='_blank'><img src = {data.image_url}/></a>
+                    </li>
+                  )} 
+               </ul>
+            </div>
+          }
 	    	</div>
 	    </div>
 	  )

@@ -2,8 +2,8 @@ const knex = require('../db.js');
 
 const dbSubmit = (userdata, callback) => {
   knex.insert({clientID:userdata.userID, 
-              favorite_url:userdata.imageUrl, 
-              image_url:userdata.url
+              favorite_url:userdata.url, 
+              image_url:userdata.imageUrl 
             }).into('favorites').then(function(response){callback(response);});
 };
 
