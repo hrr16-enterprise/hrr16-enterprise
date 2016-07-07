@@ -24,6 +24,12 @@ export const popupOpen = (content, keyword = 'general') => {
   };
 };
 
+export const toggleAnimationState = (status) => {
+  return {
+    type: types.ANIMATION_STATE,
+    payload: status
+  }
+}
 
 //=================================
 // Sidebar Actions

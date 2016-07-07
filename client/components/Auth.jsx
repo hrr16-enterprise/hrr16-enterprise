@@ -6,7 +6,7 @@ export default class Auth extends Component {
     const { errorMessage } = this.props;
     if (!this.props.auth.isAuthenticated) {
       return (
-        <div className='authButton'>
+        <div className={this.props.ui.animation ? 'animation-end auth-button' : 'auth-button'}>
           <button onTouchTap={this.props.onLoginClick} className="waves-effect waves-light btn">
             Login
           </button>
@@ -14,7 +14,7 @@ export default class Auth extends Component {
       );
     } else {
       return (
-        <div className='authButton'>
+        <div className={this.props.ui.animation ? 'animation-end auth-button' : 'auth-button'}>
           <button onTouchTap={this.props.onLogOutClick} className="waves-effect waves-light btn">
             Logout
           </button>
