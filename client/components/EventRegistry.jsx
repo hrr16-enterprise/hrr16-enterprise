@@ -7,7 +7,8 @@ export default class EventRegistry extends Component {
 
   componentWillReceiveProps() {
     if (this.props.eventRegistry.data.recentActivity) {
-      for (var i = 0; i < this.props.eventRegistry.data.recentActivity.articles.activity.length; i++) {
+      // this.props.eventRegistry.data.recentActivity.articles.activity.length
+      for (var i = 0; i < 3; i++) {
         this.props.pingGlobe("<div class='eventRegistryContainer'>" + 
           "<div class='eventRegistryLogo'>" + "<img class='eventRegistryImg' src='https://s31.postimg.org/gn3fhjsq3/asd7dhj.png'>" + 
           "</div>" + 
