@@ -1,13 +1,17 @@
+//=============================================
+// Configuration for development and production
+//=============================================
+
 module.exports = {
-
-
+  // development setting on local PC
   development: {
     client: 'postgresql',
     connection: {
       database: 'momento'
     }
   },
-  
+  // production setting for deployment 
+  // Environmental variables stored on Heroku
   production: {
     client: 'postgresql',
     connection: {

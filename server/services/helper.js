@@ -1,3 +1,7 @@
+//=================================
+// Helpers for GET and POST methods
+// using axios 
+//=================================
 const axios = require('axios');
 
 // Get helper function for making 'GET' calls to external api
