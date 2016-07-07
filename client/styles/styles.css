@@ -254,6 +254,14 @@ SIDE BAR STYLING
     width: 50px;
 }
 
+.hamburger:hover:after {
+  background: #BF6B37;
+}
+
+.hamburger:hover:before {
+  background: #BF6B37;
+}
+
 .hamburger:before {
     box-shadow: #fff 0 14px 0 0;
     position: absolute;
