@@ -4,7 +4,6 @@ import { push } from 'react-router-redux';
 import { reset } from 'redux-form';
 import axios from 'axios';
 import jsonp from 'jsonp';
-import _ from 'underscore';
 
 //=================================
 // UI Actions

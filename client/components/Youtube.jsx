@@ -15,7 +15,7 @@ export default class Youtube extends Component {
         "<div class='youtubeLogo'>" + 
         "<img class='youtubeImg' src='https://www.youtube.com/yt/brand/media/image/YouTube-logo-full_color.png'>" + 
         "<i class='fa fa-heart fa-2x' id='youtubeHeart' aria-hidden='true'></i></div>" + 
-        "<iframe src=" + vidUrl + " width='400' height='225' frameborder='0' allowfullscreen='true' rel='true'></iframe></div>",
+        "<object style='width: 400px; height: 225px; float: none; clear: both; margin: 2px auto;' data=" + vidUrl + "></object>",
         this.props.youtube.globe,
         vidData.items[0].recordingDetails.location.latitude,
         vidData.items[0].recordingDetails.location.longitude,
