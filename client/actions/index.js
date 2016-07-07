@@ -205,7 +205,7 @@ const closeMarkers = () => {
 }
 
 
-export const pingGlobe = (html, globe, latitude, longitude, width, height) => {
+export const pingGlobe = (html, globe, latitude, longitude, width, height, color) => {
   // clearMarkers(markers, globe);
   if (!markerExists(latitude, longitude)) {
     const marker = WE.marker([latitude, longitude]);
@@ -217,9 +217,10 @@ export const pingGlobe = (html, globe, latitude, longitude, width, height) => {
       globe.panTo([latitude, longitude]);
     });
 
-    // TODO: Need function here to identify which api data service and assign it a color to pass in the line below
-    var testColors = ['blue','pink','yellow','red','green']
-    marker.element.firstChild.style.backgroundColor = testColors[Math.floor(Math.random() * testColors.length)];
+
+    const testColors = ['plum','lightblue','burlywood','lightcoral','lightgreen', 'orange'];
+    marker.element.firstChild.style.backgroundColor = testColors[color];
+    marker.element.firstChild.style.border = '3px solid white';
     markers.push(marker);
   }
   return {

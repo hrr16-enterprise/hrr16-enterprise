@@ -18,7 +18,10 @@ export default class EventRegistry extends Component {
           "<i class='fa fa-heart fa-2x' id='eventRegistryHeart' aria-hidden='true'></i></div>", 
           this.props.eventRegistry.globe,
           this.props.eventRegistry.data.recentActivity.articles.activity[i].source.location.lat,
-          this.props.eventRegistry.data.recentActivity.articles.activity[i].source.location.long
+          this.props.eventRegistry.data.recentActivity.articles.activity[i].source.location.long,
+          340,
+          183,
+          0
         );
       }
     }

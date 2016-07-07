@@ -33,7 +33,8 @@ export default class Yelp extends Component {
           YelpData[i].location.coordinate.latitude, 
           YelpData[i].location.coordinate.longitude,
           200,
-          200
+          200,
+          3
         );
       }       
     }    

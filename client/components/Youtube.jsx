@@ -19,7 +19,8 @@ export default class Youtube extends Component {
         vidData.items[0].recordingDetails.location.latitude,
         vidData.items[0].recordingDetails.location.longitude,
         450,
-        230
+        230,
+        4
       );
     }
   }
