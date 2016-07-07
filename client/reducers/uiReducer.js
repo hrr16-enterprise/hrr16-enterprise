@@ -35,6 +35,11 @@ export default (state = {
         type: action.payload.type
       }
     };
+    case types.GLOBE_INSTANTIATED:
+    return {
+      ...state,
+      globe: action.payload
+    };
     default:
     return state;
   }

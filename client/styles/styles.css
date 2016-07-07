@@ -230,6 +230,26 @@ SIDE BAR STYLING
   visibility: hidden;
 }
 
+.refresh-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  margin: 20px;
+  visibility: visible;
+  z-index: 1;
+  margin-left: 15px;
+  margin-top: 2px;
+}
+
+.refresh-button:hover {
+  color: #BF6B37;
+}
+
+.refresh-button-hidden {
+  visibility: hidden;
+}
+
 .hamburger {
   color: #fff;
   background: transparent;
