@@ -12,7 +12,7 @@ export default function configureStore() {
   return createStore(
     rootReducer,
     compose(
-      applyMiddleware(thunk, router, logger),
+      applyMiddleware(thunk, router), /*applyMiddleware(thunk, router, logger),*/
       window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   );

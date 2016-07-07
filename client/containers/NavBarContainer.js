@@ -7,7 +7,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getData: (globe) => {
       actions.clearMarkers(globe);
-      dispatch(actions.fetchReddit());
       dispatch(actions.fetchFlickr());
       dispatch(actions.fetchNYTimes());
       dispatch(actions.fetchEventRegistry());

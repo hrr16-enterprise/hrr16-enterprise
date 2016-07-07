@@ -659,6 +659,7 @@ button:focus {
 
 .we-pp-wrapper {
   background: #b7f0cf;
+  border: 3px #fff solid;
 }
 
 .we-pp-tip {
@@ -689,11 +690,13 @@ FLICKR STYLING
 }
 
 #flickrHeart {
-  float: right;
+  position: absolute;
   color: #E7576F;
   font-size: 1.5em;
-  margin-right: -15px;
+  margin-right: -10px;
   margin-bottom: -10px;
+  right: 0;
+  bottom: 0;
 }
 
 #flickrHeart:hover {
@@ -747,11 +750,13 @@ EVENT REGISTRY STYLING
 }
 
 #eventRegistryHeart {
-  float: right;
+  position: absolute;
   color: #E7576F;
   font-size: 1.5em;
   margin-right: -15px;
   margin-bottom: -10px;
+  right: 0;
+  bottom: 0;
 }
 
 #eventRegistryHeart:hover {
@@ -786,7 +791,7 @@ YELP STYLING
   position: absolute;
   color: #E7576F;
   font-size: 1.5em;
-  margin-right: -15px;
+  margin-right: -10px;
   margin-bottom: -10px;
   right: 0;
   bottom: 0;
@@ -814,11 +819,13 @@ YOUTUBE STYLING
 }
 
 #youtubeHeart {
-  float: right;
+  position: absolute;
   color: #E7576F;
   font-size: 1.5em;
   margin-right: -60px;
-  margin-top: 220px;
+  margin-bottom: -10px;
+  right: 0;
+  bottom: 0;
 }
 
 #youtubeHeart:hover {
@@ -844,11 +851,13 @@ USGS STYLING
 }
 
 #usgsHeart {
-  float: right;
+  position: absolute;
   color: #E7576F;
   font-size: 1.5em;
   margin-right: -15px;
   margin-bottom: -10px;
+  right: 0;
+  bottom: 0;
 }
 
 #usgsHeart:hover {
