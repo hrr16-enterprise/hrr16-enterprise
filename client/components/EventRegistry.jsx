@@ -9,13 +9,30 @@ export default class EventRegistry extends Component {
     if (this.props.eventRegistry.data.recentActivity) {
       // this.props.eventRegistry.data.recentActivity.articles.activity.length
       for (var i = 0; i < 3; i++) {
-        this.props.pingGlobe("<div class='eventRegistryContainer'>" + 
-          "<div class='eventRegistryLogo'>" + "<img class='eventRegistryImg' src='https://s31.postimg.org/gn3fhjsq3/asd7dhj.png'>" + 
-          "</div>" + 
-          "<div class='card-content'>" + this.props.eventRegistry.data.recentActivity.articles.activity[i].title +
-          this.props.eventRegistry.data.recentActivity.articles.activity[i].body + "<a target='_blank' href=" +
-          this.props.eventRegistry.data.recentActivity.articles.activity[i].url + ">Read more</a></div>" +
-          "<i class='fa fa-heart fa-2x' id='eventRegistryHeart' aria-hidden='true'></i></div>", 
+        this.props.pingGlobe("" +
+          "<div class='eventRegistryContainer'>" +
+            //Data Render
+            "<div class='eventRegistryLogo'>" +
+              "<img class='eventRegistryImg' src='https://s31.postimg.org/gn3fhjsq3/asd7dhj.png'>" +
+            "</div>" +
+            "<div>" +
+              this.props.eventRegistry.data.recentActivity.articles.activity[i].title +
+              this.props.eventRegistry.data.recentActivity.articles.activity[i].body +
+              "<a target='_blank' href=" +
+                this.props.eventRegistry.data.recentActivity.articles.activity[i].url +">Read more" +
+              "</a>" +
+            "</div>" +
+            //
+            "<iframe name='hiddenFrame' width='0' height='0' border='0' style='display: none;'></iframe>" +
+            "<form action='/results/user/data' method='post' target='hiddenFrame'>" +
+              "<input name='userID' type='hidden' value=" + JSON.parse(localStorage.getItem('profile')).clientID + ">" +
+              "<input name='imageUrl' type='hidden' value='null'>" +
+              "<input name='url' type='hidden' value=" + this.props.eventRegistry.data.recentActivity.articles.activity[i].url + ">" +
+              "<button class='favoriteButton'>" +
+                "<i class='fa fa-heart fa-2x' id='eventRegistryHeart' aria-hidden='true'></i>" +
+              "</button>" +
+            "</form>" +
+          "</div>",
           this.props.eventRegistry.globe,
           this.props.eventRegistry.data.recentActivity.articles.activity[i].source.location.lat,
           this.props.eventRegistry.data.recentActivity.articles.activity[i].source.location.long,
