@@ -757,11 +757,13 @@ YELP STYLING
 }
 
 #yelpHeart {
-  float: right;
+  position: absolute;
   color: #E7576F;
   font-size: 1.5em;
   margin-right: -15px;
   margin-bottom: -10px;
+  right: 0;
+  bottom: 0;
 }
 
 #yelpHeart:hover {
