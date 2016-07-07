@@ -8,10 +8,15 @@ export default (state = {
   },
   button: {
     active: false
-  }
-
+  },
+  animation: false
 }, action) => {
   switch (action.type) {
+    case types.ANIMATION_STATE:
+    return {
+      ...state,
+      animation: action.payload
+    };
     case types.POPUP_CLOSE:
     return {
       ...state,

@@ -9,15 +9,12 @@ export default class FetchButton extends Component {
     
     if(this.props.auth.isAuthenticated){
       return (
-        <div className="button">
+        <div className={this.props.ui.animation ? 'animation-end fetch-button' : 'fetch-button'}>
           <button onTouchTap={this.props.getData.bind(this)} className="waves-effect waves-light btn">New Momento</button>
         </div>
-        );
+      );
     } else {
-      return (
-        <div className="placeholder"> Please Log In</div>
-        );
+      return false;
     }
   }
 }
-
