@@ -260,36 +260,6 @@ export const fetchFlickr = () => {
 
 
 //=================================
-// Reddit Actions
-//=================================
-export const redditSuccess = (data) => {
-  return {
-    type: types.REDDIT_SUCCESS,
-    payload: data
-  };
-};
-
-export const redditFailure = () => {
-  return {
-    type: types.REDDIT_FAILURE
-  };
-};
-
-export const fetchReddit = () => {
-  return (dispatch) => {
-    return helper.getHelper('/results/reddit')
-    .then((response) => {
-      dispatch(redditSuccess(response))
-    })
-    .catch((err) => {
-      console.error(err);
-      dispatch(redditFailure())
-    });
-  };
-};
-
-
-//=================================
 // NYTimes Actions
 //=================================
 export const nyTimesSuccess = (articleData) => {
