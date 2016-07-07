@@ -471,6 +471,11 @@ YELP STYLING
   height: auto;
 }
 
+.yelpForm {
+  margin-right: -15px;
+  margin-bottom: -10px;
+}
+
 #yelpHeart {
   float: right;
   color: #E7576F;

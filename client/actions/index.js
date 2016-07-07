@@ -207,9 +207,9 @@ export const pingGlobe = (html, globe, latitude, longitude, width, height) => {
     marker.lng = longitude;
     marker.addTo(globe).bindPopup(html, {maxWidth: width, maxHeight: height, closeButton: true});
 
-    // marker.on('click', function() {
-    //   globe.panTo([latitude, longitude]);
-    // });
+    marker.on('click', function() {
+      globe.panTo([latitude, longitude]);
+    });
 
     // TODO: Need function here to identify which api data service and assign it a color to pass in the line below
     var testColors = ['blue','pink','yellow','red','green']
