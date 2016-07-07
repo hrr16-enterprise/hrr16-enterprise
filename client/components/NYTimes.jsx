@@ -19,7 +19,8 @@ export default class NYTimes extends Component {
         NYTimesData.results[0].geocodes[0].latitude,
         NYTimesData.results[0].geocodes[0].longitude,
         200,
-        200
+        200,
+        2
       );
     }
   }

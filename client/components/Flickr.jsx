@@ -26,7 +26,8 @@ export default class Flickr extends Component {
           this.props.flickr.result.data.photos.photo[i].latitude,
           this.props.flickr.result.data.photos.photo[i].longitude,
           200,
-          200
+          200,
+          1
         );
       }
     }

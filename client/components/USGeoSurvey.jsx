@@ -22,7 +22,8 @@ export default class USGeoSurvey extends Component {
         latestQuakes.geometry.coordinates[0],
         latestQuakes.geometry.coordinates[1],
         250,
-        230
+        230,
+        5
       );
     }
   }
