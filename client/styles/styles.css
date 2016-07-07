@@ -5,13 +5,35 @@
 /*
 NAV BAR STYLING
  */
+.nav {
+  position: absolute;
+  float: left;
+  width: 355px;  
+}
 
-.appTitle{
+.appTitle {
+  height: 125px;
+  width: 355px;
   font-family: 'Lobster Two', cursive;
   font-size: 98px;
   color: #85E6AD;
 }
 
+.authButton {
+  position: absolute;
+  top: 125px;
+  left: 5px;
+}
+
+/*
+FETCHBUTTON STYLING
+*/
+.button {
+  position: absolute;
+  top: 163px;
+  left: 5px;
+  width: 170px;
+}
 
 /* 
 SIDE BAR STYLING
@@ -324,6 +346,7 @@ button:focus {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   box-shadow: -1px 1px 1px rgba(0,0,0,0.3);
+  z-index: 5;
 }
 
 .fa-heart:hover {
@@ -333,6 +356,10 @@ button:focus {
 .favoriteButton {
   border: none; 
   background-color: transparent;
+}
+
+.we-pp {
+  z-index: 10;
 }
 
 .we-pp-wrapper {

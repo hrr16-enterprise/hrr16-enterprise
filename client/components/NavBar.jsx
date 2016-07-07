@@ -3,8 +3,8 @@ import Vivus from "vivus";
 import Auth from '../containers/AuthContainer';
 
 export const NavBar = ({ children }) => (
-  <div>
-    <div className="appTitle">M  
+  <div className="nav">
+    <div className="appTitle">M
       <svg version="1.1" id="svg" height="75" width="58">
         <ellipse data-start="10" data-duration="20" fill="none" stroke="#85E6AD" stroke-width="10" stroke-miterlimit="10" cx="28.9" cy="46.1" rx="27.6" ry="27.3"/>
         <polygon fill="none" stroke="#85E6AD" stroke-width="10" stroke-miterlimit="10" points="22.1,43.1 16.7,40.4 11.2,39.5 10,36.5 10.4,32.4 14.3,33 16.4,34.3 15.9,30.5 16.4,27.8 17.9,25.9 
