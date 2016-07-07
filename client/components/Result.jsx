@@ -2,7 +2,6 @@ import React from 'react';
 import Vivus from 'vivus';
 import { Component } from 'react';
 import FlickrComponent from './Flickr.jsx';
-import RedditComponent from './Reddit.jsx';
 import NYTimesComponent from './NYTimes.jsx';
 import EventRegistryComponent from './EventRegistry.jsx';
 import YoutubeComponent from './Youtube.jsx';
@@ -22,7 +21,7 @@ class Result extends Component {
   } 
 
   render() {
-    const { result, ui, flickr, reddit, nytimes, globe, pingGlobe, eventRegistry, youtube, yelp, usGeoSurvey } = this.props;
+    const { result, ui, flickr, nytimes, globe, pingGlobe, eventRegistry, youtube, yelp, usGeoSurvey } = this.props;
     return(
       <div className="result">
         <FlickrComponent flickr={flickr} pingGlobe={pingGlobe} />
@@ -31,7 +30,6 @@ class Result extends Component {
         <YelpComponent yelp={yelp} pingGlobe={pingGlobe} />
         <YoutubeComponent youtube={youtube} pingGlobe={pingGlobe} />
         <USGeoSurveyComponent usGeoSurvey={usGeoSurvey} pingGlobe={pingGlobe} />
-        <RedditComponent reddit={reddit} />
       </div>
     )
   };

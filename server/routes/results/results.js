@@ -21,22 +21,6 @@ router.get('/flickr', (req, res) => {
   })
 });
 
-//=======================
-// Reddit Request Handlers
-//=======================
-
-router.get('/reddit', (req, res) => {
-  const redditUrl = 'https://www.reddit.com/new.json?sort=new?';
-  return helper.getHelper(redditUrl)
-  .then((response) => {
-    res.send(response.data);
-  })
-  .catch((error) => {
-    console.error(error);
-    res.send(error);
-  })
-});
-
 
 //nytimes request handlers
 router.get('/nytimes', (req, res) => {

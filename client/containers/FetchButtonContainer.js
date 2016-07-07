@@ -8,7 +8,6 @@ function mapDispatchToProps(dispatch) {
   return {
     getData: () => {
       dispatch(actions.toggleAnimationState(true));
-      dispatch(actions.fetchReddit());
       dispatch(actions.fetchFlickr());
       dispatch(actions.fetchNYTimes());
       dispatch(actions.fetchEventRegistry());
