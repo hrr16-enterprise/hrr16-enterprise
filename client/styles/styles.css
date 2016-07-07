@@ -190,6 +190,10 @@ ABOUT THE TEAM STYLING
   margin: 20px;
 }
 
+.fa-rocket:hover {
+  color: #BF6B37;
+}
+
 .close:before {
   animation: beforeOpenAnimate 1s forwards;
 }
@@ -274,10 +278,12 @@ ABOUT THE TEAM STYLING
   text-align: center;
   margin-left: 72px;
   color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .td-img {
-  padding: 0px 0px !important;
+  padding: 0px 0px 0px 0px!important;
+  width: 272px;
 }
 
 .profile-img {
@@ -289,15 +295,17 @@ ABOUT THE TEAM STYLING
 .profile-name {
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .profile-role {
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .fa-github-square {
@@ -305,8 +313,16 @@ ABOUT THE TEAM STYLING
   margin-right: 10px;
 }
 
+.fa-github-square:hover {
+  color: #BF6B37;
+}
+
 .fa-linkedin-square {
   color: white;
+}
+
+.fa-linkedin-square:hover {
+  color: #BF6B37;
 }
 
 /*
@@ -379,6 +395,8 @@ FLICKR STYLING
  */
 .flickrContainer {
   position: relative;
+  height: 236px;
+  width: 200px;
 }
 
 .flickrLogo {
@@ -392,9 +410,15 @@ FLICKR STYLING
 }
 
 #flickrHeart {
-  position:absolute;
-  top:0;
-  right:0;
+  float: right;
+  color: #E7576F;
+  font-size: 1.5em;
+  margin-right: -15px;
+  margin-bottom: -10px;
+}
+
+#flickrHeart:hover {
+  color: #fff;
 }
 
 /*
@@ -415,9 +439,15 @@ NY TIMES STYLING
 }
 
 #nyTimesHeart {
-  position:absolute;
-  top:0;
-  right:0;
+  float: right;
+  color: #E7576F;
+  font-size: 1.5em;
+  margin-right: -15px;
+  margin-bottom: -10px;
+}
+
+#nyTimesHeart:hover {
+  color: #fff;
 }
 
 /*
@@ -454,6 +484,8 @@ YELP STYLING
  */
 .yelpContainer {
   position: relative;
+  height: 250px;
+  width: 200px;
 }
 
 .yelpLogo {
@@ -466,10 +498,21 @@ YELP STYLING
   height: auto;
 }
 
+.yelpForm {
+  margin-right: -15px;
+  margin-bottom: -10px;
+}
+
 #yelpHeart {
-  position:absolute;
-  top:0;
-  right:0;
+  float: right;
+  color: #E7576F;
+  font-size: 1.5em;
+  margin-right: -15px;
+  margin-bottom: -10px;
+}
+
+#yelpHeart:hover {
+  color: #fff;
 }
 
 /*
@@ -490,9 +533,15 @@ YOUTUBE STYLING
 }
 
 #youtubeHeart {
-  position:absolute;
-  top:0;
-  right:0;
+  float: right;
+  color: #E7576F;
+  font-size: 1.5em;
+  margin-right: -60px;
+  margin-top: 220px;
+}
+
+#youtubeHeart:hover {
+  color: #fff;
 }
 
 
@@ -514,7 +563,14 @@ USGS STYLING
 }
 
 #usgsHeart {
-  position:absolute;
-  top:0;
-  right:0;
+  float: right;
+  color: #E7576F;
+  font-size: 1.5em;
+  margin-right: -15px;
+  margin-bottom: -10px;
 }
+
+#usgsHeart:hover {
+  color: #fff;
+}
+
