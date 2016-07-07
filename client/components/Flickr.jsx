@@ -8,7 +8,7 @@ export default class Flickr extends Component {
   componentWillReceiveProps(object) {
     if (this.props.flickr.result.data) {
       // this.props.flickr.result.data.photos.photo.length
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 10; i++) {
         
         const titleWhole = this.props.flickr.result.data.photos.photo[i].title;
         const titleSlice = titleWhole.slice(0,10) + "...";

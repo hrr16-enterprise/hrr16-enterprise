@@ -3,9 +3,15 @@ import Auth from '../containers/AuthContainer';
 import Vivus from "vivus";
 
 export default class NavBar extends Component {
+
   render () {
+    console.log(this.props);
     return (
+
       <div>
+        <div onTouchTap={() => { this.props.getData(this.props.ui.globe).bind(this) }} className={this.props.ui.animation ? 'refresh-button' : 'refresh-button-hidden'}>
+          <i className="fa fa-retweet fa-4x" aria-hidden="true"></i>
+        </div>
         <div className={this.props.ui.animation ? 'animation-end appTitle' : 'appTitle'}>M  
           <svg version="1.1" id="svg" height="75" width="58">
             <ellipse data-start="10" data-duration="20" fill="none" stroke="#fff" stroke-width="10" stroke-miterlimit="10" cx="28.9" cy="46.1" rx="27.6" ry="27.3"/>

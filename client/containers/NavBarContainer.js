@@ -1,11 +1,19 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as actions from '../actions/index.js';
 import NavBarComponent from '../components/NavBar.jsx';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // Add functions to dispatch login/logout actions
-    
+    getData: (globe) => {
+      actions.clearMarkers(globe);
+      dispatch(actions.fetchFlickr());
+      dispatch(actions.fetchNYTimes());
+      dispatch(actions.fetchEventRegistry());
+      dispatch(actions.fetchYoutube());
+      dispatch(actions.fetchYelp());
+      dispatch(actions.fetchUSGeoSurvey());
+    }
   };
 };
 

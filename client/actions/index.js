@@ -178,7 +178,7 @@ export const instantiateGlobe = () => {
   };
 };
 
-const markers = [];
+let markers = [];
 
 const markerExists = (lat, lng) => {
   for (var i = 0; i < markers.length; i++) {
@@ -189,13 +189,11 @@ const markerExists = (lat, lng) => {
   return false;
 };
 
-const clearMarkers = (markers, globe) => {
-  if(markers.length > 0){
-    markers.forEach((marker) => {
-      marker.removeFrom(globe);
-    markers.length = 0;
-    });
-  }
+export const clearMarkers = (globe) => {
+  markers.forEach((marker) => {
+    marker.removeFrom(globe);
+  });
+  markers = [];
 };
 
 const closeMarkers = () => {
@@ -204,9 +202,7 @@ const closeMarkers = () => {
   });
 }
 
-
 export const pingGlobe = (html, globe, latitude, longitude, width, height, color) => {
-  // clearMarkers(markers, globe);
   if (!markerExists(latitude, longitude)) {
     const marker = WE.marker([latitude, longitude]);
     marker.lat = latitude;
