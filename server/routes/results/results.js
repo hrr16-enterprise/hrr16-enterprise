@@ -1,3 +1,7 @@
+//==================================
+// Routing for GET and POST requests 
+//==================================
+
 const express = require('express');
 const router = express.Router();
 const Promise = require('bluebird');
@@ -16,7 +20,6 @@ router.get('/flickr', (req, res) => {
     res.send(response.data);
   })
   .catch((error) => {
-    console.error(error);
     res.send(error);
   })
 });
@@ -34,7 +37,6 @@ router.get('/nytimes', (req, res) => {
     res.send(response.data);
   })
   .catch((error) => {
-    console.error(error);
     res.send(error);
   })
 });
@@ -82,12 +84,10 @@ router.get('/youtube', (req, res) => {
       res.send(response.data);
     })
     .catch((error) => {
-      console.error(error);
       res.send(error);
     })
   })
   .catch((error) => {
-    console.error(error);
     res.send(error);
   })
 });
@@ -135,7 +135,6 @@ router.get('/usgeo', (req, res) => {
 //=======================
 router.post('/user/data', (req, res) => {
   dbhandler.dbSubmit(req.body, function(response){
-    // res.send(response);
     res.sendStatus(200);
   });
 });

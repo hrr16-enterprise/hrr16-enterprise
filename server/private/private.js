@@ -1,14 +1,13 @@
+//==================================
+// Authentication Keys for API calls
+//==================================
+
 const FLICKR_KEY = process.env.FLICKR_KEY;
 const NYTIMES_KEY = process.env.NYTIMES_KEY;
 const YOUTUBE_KEY = process.env.YOUTUBE_KEY;
 
-//=======================
-// Authentication Keys
-//=======================
-
+// Yelp requires OAuth
 const Yelp = require('yelp');
-
-// Yelp
 const YELP_KEY = new Yelp({
   consumer_key: process.env.YELP_CONSUMER_KEY,
   consumer_secret: process.env.YELP_CONSUMER_SECRET,

@@ -18,7 +18,7 @@ export default class Sidebar extends Component {
               <ul>
                  {this.props.auth.data.data.map((data) =>
                    <li>
-                      <a href = {data.favorite_url} target='_blank'><img src = {data.image_url}/></a>
+                      <a href = {data.image_url} target='_blank'><img src = {data.favorite_url}/></a>
                     </li>
                   )} 
                </ul>
