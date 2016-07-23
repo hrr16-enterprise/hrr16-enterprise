@@ -6,6 +6,9 @@ export default class About extends Component {
     
   }
   
+  /**
+   * Renders 'Meet the Team' section
+   */
   render() {
     return (
       <div className={this.props.about.visible ? 'about-open about' : 'about-close about'}>
@@ -22,10 +25,10 @@ export default class About extends Component {
                     <img className="profile-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/06f/102/0d4fc75.jpg" />
                   </td>
                   <td className="td-img">
-                    <img className="profile-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAftAAAAJGRkOWViMTE5LTIyYTktNDMzYS1hODBhLTNiYmQzYWIzNDM4OA.jpg" />
+                    <img className="profile-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAhDAAAAJDEyYjg2OGNhLWY1YWMtNDc3Ni1iNzUzLWNkYTgyZjBiZDFkMQ.jpg" />
                   </td>
                   <td className="td-img">
-                    <img className="profile-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAd-AAAAJGRmZDNkMzU3LTI4MTMtNGVjNC1hY2NmLTRiYWNlOWIyNDI2OQ.jpg" />
+                    <img className="profile-img" src="https://avatars3.githubusercontent.com/u/4448982?v=3&s=460" />
                   </td>
                   <td className="td-img">
                     <img className="profile-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/4/000/17f/25d/3122bec.jpg" />
@@ -39,7 +42,7 @@ export default class About extends Component {
                     <a href="https://github.com/gschrock"> 
                       <i className="fa fa-github-square fa-3x"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/gschrock">
+                    <a href="https://www.linkedin.com/in/gabrielschrock">
                       <i className="fa fa-linkedin-square fa-3x"></i>
                     </a>
                   </td>
@@ -86,6 +89,3 @@ export default class About extends Component {
     )
   }
 }
-
-        // <div onTouchTap={this.props.about.visible ? this.props.hideAbout : this.props.showAbout} className={this.props.about.visible ? 'open sandwich' : 'close sandwich'}>
-        // </div>

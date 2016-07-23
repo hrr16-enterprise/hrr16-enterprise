@@ -4,10 +4,15 @@ export default class EventRegistry extends Component {
   constructor(props) {
     super(props);
   }
-
+  
+  /**
+   * When component receives props
+   * pingGlobe function is invoked to
+   * populate ping for API query results
+   */
   componentWillReceiveProps() {
     if (this.props.eventRegistry.data.recentActivity) {
-      // this.props.eventRegistry.data.recentActivity.articles.activity.length
+      
       for (var i = 0; i < 10; i++) {
         this.props.pingGlobe("" +
           "<div class='eventRegistryContainer'>" +
@@ -43,7 +48,10 @@ export default class EventRegistry extends Component {
       }
     }
   }
-
+  
+  /**
+   * Return false due to use of pingGlobe function
+   */
   render() {
     return false;
   }

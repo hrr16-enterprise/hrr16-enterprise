@@ -5,6 +5,11 @@ export default class Youtube extends Component {
     super(props);
   }
   
+  /**
+   * When component receives props
+   * pingGlobe function is invoked to
+   * populate ping for API query results
+   */
   componentWillReceiveProps(object) {
     if (this.props.youtube.result.data) {
       const vidData = this.props.youtube.result.data;
@@ -39,6 +44,9 @@ export default class Youtube extends Component {
     }
   }
   
+  /**
+   * Return false due to use of pingGlobe function
+   */
   render() {
     return false;
   }
