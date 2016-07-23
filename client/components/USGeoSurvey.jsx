@@ -6,6 +6,11 @@ export default class USGeoSurvey extends Component {
     super(props);
   }
   
+  /**
+   * When component receives props
+   * pingGlobe function is invoked to
+   * populate ping for API query results
+   */
   componentWillReceiveProps(object) {
     if (this.props.usGeoSurvey.result.features) {
         
@@ -43,6 +48,9 @@ export default class USGeoSurvey extends Component {
     }
   }
   
+  /**
+   * Return false due to use of pingGlobe function
+   */
   render() {
     return false;
   }

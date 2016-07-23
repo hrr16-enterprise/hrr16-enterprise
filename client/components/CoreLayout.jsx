@@ -6,6 +6,10 @@ import Sidebar from '../containers/SidebarContainer';
 import Globe from '../containers/GlobeContainer';
 import About from '../containers/AboutContainer';
 
+/**
+ * CoreLayout
+ * comprised of all other children components
+ */
 export const CoreLayout = ({ children }) => (
   <div>
     <NavBar />

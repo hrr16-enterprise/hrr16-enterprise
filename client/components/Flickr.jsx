@@ -5,9 +5,14 @@ export default class Flickr extends Component {
     super(props);
   }
 
+  /**
+   * When component receives props
+   * pingGlobe function is invoked to
+   * populate ping for API query results
+   */
   componentWillReceiveProps(object) {
     if (this.props.flickr.result.data) {
-      // this.props.flickr.result.data.photos.photo.length
+      
       for (var i = 0; i < 10; i++) {
         
         const titleWhole = this.props.flickr.result.data.photos.photo[i].title;
@@ -46,7 +51,10 @@ export default class Flickr extends Component {
       }
     }
   }
-
+  
+  /**
+   * Return false due to use of pingGlobe function
+   */
   render() {
     return false;
   }

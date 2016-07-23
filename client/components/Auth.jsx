@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Auth extends Component {
 
+  /**
+   * Render's login and logout buttons
+   */
   render() {
     const { errorMessage } = this.props;
     if (!this.props.auth.isAuthenticated) {

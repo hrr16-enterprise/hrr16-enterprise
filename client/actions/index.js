@@ -347,8 +347,9 @@ export const YelpFailure = (err) => {
     err: err
   };
 };
+
 // yelp fetch including geolocation
-// geolcation takes ~5 seconds 
+// geolocation takes ~5 seconds 
 export const fetchYelp = () => {
   var location;
   navigator.geolocation.getCurrentPosition((position) => {

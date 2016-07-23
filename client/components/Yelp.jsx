@@ -5,6 +5,11 @@ export default class Yelp extends Component {
     super(props);
   }
   
+  /**
+   * When component receives props
+   * pingGlobe function is invoked to
+   * populate ping for API query results
+   */
   componentWillReceiveProps(object) {
     if (this.props.yelp.result.data) {
       const YelpData = this.props.yelp.result.data;
@@ -43,6 +48,9 @@ export default class Yelp extends Component {
     }
   }
   
+  /**
+   * Return false due to use of pingGlobe function
+   */
   render() {
     return false;
   }
